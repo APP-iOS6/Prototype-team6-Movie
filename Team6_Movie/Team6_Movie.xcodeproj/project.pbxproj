@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7736C1B52C7D931A008FD5BD /* RecruitmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736C1B42C7D931A008FD5BD /* RecruitmentModel.swift */; };
 		BD0EE6892C7C7584000D503C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EE6882C7C7584000D503C /* AppDelegate.swift */; };
 		BD0EE68B2C7C7584000D503C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EE68A2C7C7584000D503C /* SceneDelegate.swift */; };
 		BD0EE68D2C7C7584000D503C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EE68C2C7C7584000D503C /* ViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7736C1B42C7D931A008FD5BD /* RecruitmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentModel.swift; sourceTree = "<group>"; };
 		BD0EE6852C7C7584000D503C /* Team6_Movie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Team6_Movie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD0EE6882C7C7584000D503C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD0EE68A2C7C7584000D503C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				BD0EE6E52C7D6B92000D503C /* RecruitmentViewController.swift */,
+				7736C1B42C7D931A008FD5BD /* RecruitmentModel.swift */,
 			);
 			path = Recruitment;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				BD0EE68D2C7C7584000D503C /* ViewController.swift in Sources */,
 				BD0EE6EB2C7D6BB2000D503C /* SearchViewController.swift in Sources */,
 				BD0EE6E82C7D6BA0000D503C /* MyPageViewController.swift in Sources */,
+				7736C1B52C7D931A008FD5BD /* RecruitmentModel.swift in Sources */,
 				BD0EE6892C7C7584000D503C /* AppDelegate.swift in Sources */,
 				BD0EE6EF2C7D6BC4000D503C /* BaseViewController.swift in Sources */,
 				BD0EE6ED2C7D6BBA000D503C /* HomeViewController.swift in Sources */,
