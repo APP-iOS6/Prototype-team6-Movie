@@ -30,6 +30,7 @@ class CategoryContentsViewController: UIViewController {
             contents = movieContents
         case .Concert:
             contents = concertContents
+            
         }
         self.title = category.rawValue
         if isViewLoaded {

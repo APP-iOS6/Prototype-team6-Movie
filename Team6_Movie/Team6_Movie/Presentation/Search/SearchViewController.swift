@@ -59,6 +59,162 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }()
     
     
+    private lazy var kboButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("스포츠", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 25)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
+        button.backgroundColor = .darkGray
+        button.layer.cornerRadius = 8
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        button.addAction(UIAction { [weak self] _ in
+            let detailVC = CategoryContentsViewController()
+            detailVC.setCategory(.Sports)
+            self?.navigationController?.pushViewController(detailVC, animated: true)        }, for: .touchUpInside)
+        
+        return button
+    }()
+    
+    private lazy var movieButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("영화", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 25)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
+        button.backgroundColor = .darkGray
+        button.layer.cornerRadius = 8
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        button.addAction(UIAction { [weak self] _ in
+            let detailVC = CategoryContentsViewController()
+            detailVC.setCategory(.Movie)
+            self?.navigationController?.pushViewController(detailVC, animated: true)        }, for: .touchUpInside)
+        
+        return button
+    }()
+    
+    private lazy var concertButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("콘서트", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 25)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
+        button.backgroundColor = .darkGray
+        button.layer.cornerRadius = 8
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        button.addAction(UIAction { [weak self] _ in
+            let detailVC = CategoryContentsViewController()
+            detailVC.setCategory(.Concert)
+            self?.navigationController?.pushViewController(detailVC, animated: true)        }, for: .touchUpInside)
+        
+        return button
+    }()
+    
+    private lazy var animationButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("애니메이션", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 25)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
+        button.backgroundColor = .darkGray
+        button.layer.cornerRadius = 8
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        button.addAction(UIAction { [weak self] _ in
+            let detailVC = CategoryContentsViewController()
+            detailVC.setCategory(.Concert)
+            self?.navigationController?.pushViewController(detailVC, animated: true)        }, for: .touchUpInside)
+        
+        return button
+    }()
+    
+    private lazy var sportButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("스포츠", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 25)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
+        button.backgroundColor = .darkGray
+        button.layer.cornerRadius = 8
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        button.addAction(UIAction { [weak self] _ in
+            let detailVC = CategoryContentsViewController()
+            detailVC.setCategory(.Sports)
+            self?.navigationController?.pushViewController(detailVC, animated: true)        }, for: .touchUpInside)
+        
+        return button
+    }()
+    
+    private lazy var etcButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("기타", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 25)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
+        button.backgroundColor = .darkGray
+        button.layer.cornerRadius = 8
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        button.addAction(UIAction { [weak self] _ in
+            let detailVC = CategoryContentsViewController()
+            detailVC.setCategory(.Sports)
+            self?.navigationController?.pushViewController(detailVC, animated: true)        }, for: .touchUpInside)
+        
+        
+        return button
+    }()
+    
+    
+    
+    
+    public lazy var hStackViewFirst: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        stackView.spacing = 10
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return stackView
+    }()
+    
+    public lazy var hStackViewSecond: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        stackView.spacing = 10
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return stackView
+    }()
+    
+    
+    public lazy var hStackViewThird: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        stackView.spacing = 10
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return stackView
+    }()
+    
+    
+    
+    public lazy var vStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.spacing = 10
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return stackView
+    }()
+    
+    
     private lazy var recentSearchTableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .clear
@@ -83,12 +239,47 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         title = "검색"
         self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         
-        view.backgroundColor = UIColor(red: 30/255, green: 32/255, blue: 30/255, alpha: 1.0)
         setupSearchBar()
         
+        setupButtonInterface()
+        setupButtonLayout()
+        view.backgroundColor = .mainColor()
     }
     
     
+    func setupButtonInterface() {
+        view.addSubview(vStackView)
+
+        vStackView.addArrangedSubview(hStackViewFirst)
+        vStackView.addArrangedSubview(hStackViewSecond)
+        vStackView.addArrangedSubview(hStackViewThird)
+        
+        hStackViewFirst.addArrangedSubview(kboButton)
+        hStackViewFirst.addArrangedSubview(movieButton)
+        
+        hStackViewSecond.addArrangedSubview(concertButton)
+        hStackViewSecond.addArrangedSubview(animationButton)
+        
+        hStackViewThird.addArrangedSubview(sportButton)
+        hStackViewThird.addArrangedSubview(etcButton)
+    }
+    
+    func setupButtonLayout() {
+        
+        NSLayoutConstraint.activate([
+            vStackView.topAnchor.constraint(equalTo: queryTextField.bottomAnchor, constant: 50),
+            vStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            vStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            
+            hStackViewFirst.heightAnchor.constraint(equalToConstant: 100),
+            hStackViewSecond.heightAnchor.constraint(equalToConstant: 100),
+            hStackViewThird.heightAnchor.constraint(equalToConstant: 100)
+            
+            
+        ])
+    }
+    
+
     
     private func setupSearchBar() {
         view.addSubview(queryTextField)
@@ -104,14 +295,65 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             recentSearchTableView.topAnchor.constraint(equalTo: queryTextField.bottomAnchor, constant: 8),
             recentSearchTableView.leadingAnchor.constraint(equalTo: queryTextField.leadingAnchor),
             recentSearchTableView.trailingAnchor.constraint(equalTo: queryTextField.trailingAnchor),
-            recentSearchTableView.heightAnchor.constraint(equalToConstant: 320)
+            recentSearchTableView.heightAnchor.constraint(equalToConstant: 345)
         ])
     }
+    
+    
+
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             self.view.endEditing(true)
     }
     
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = view.backgroundColor // 헤더 배경색 설정
+
+        // "최근 검색한 항목" 레이블
+        let titleLabel = UILabel()
+        titleLabel.text = "최근 검색한 항목"
+        titleLabel.font = .systemFont(ofSize: 12)
+        titleLabel.textColor = .white
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+
+        // "지우기" 버튼
+        let clearButton = UIButton(type: .system)
+        clearButton.setTitle("지우기", for: .normal)
+        clearButton.setTitleColor(.systemBlue, for: .normal)
+        clearButton.translatesAutoresizingMaskIntoConstraints = false
+        clearButton.addTarget(self, action: #selector(clearRecentSearches), for: .touchUpInside)
+
+        // 스택 뷰에 레이블과 버튼 추가
+        let stackView = UIStackView(arrangedSubviews: [titleLabel, clearButton])
+        stackView.axis = .horizontal
+        stackView.distribution = .equalSpacing
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        headerView.addSubview(stackView)
+
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: headerView.topAnchor, constant: -10),
+            stackView.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -20),
+            stackView.bottomAnchor.constraint(equalTo: headerView.bottomAnchor)
+        ])
+
+        return headerView
+    }
+
+    
+    // 헤더 뷰의 높이 설정
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10
+    }
+
+    
+    // 지우기 버튼 액션
+    @objc private func clearRecentSearches() {
+        recentSearches.removeAll()
+        recentSearchTableView.reloadData()
+    }
 
     
     
@@ -143,11 +385,15 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         recentSearchTableView.isHidden = false
+        vStackView.isHidden = true
+
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         recentSearchTableView.isHidden = true
+        vStackView.isHidden = false
     }
+    
 }
 
 
@@ -184,7 +430,7 @@ class RecentSearchCell: UITableViewCell {
     }
     
     private func setupViews() {
-        contentView.backgroundColor = UIColor(red: 30/255, green: 32/255, blue: 30/255, alpha: 1.0)
+        contentView.backgroundColor = .mainColor()
         
         
         searchImageView.contentMode = .scaleAspectFill
