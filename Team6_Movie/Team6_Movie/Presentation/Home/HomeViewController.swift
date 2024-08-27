@@ -1,10 +1,3 @@
-//
-//  HomeViewController.swift
-//  Team6_Movie
-//
-//  Created by 김정원 on 8/27/24.
-//
-
 import UIKit
 
 class HomeViewController: UIViewController {
@@ -22,22 +15,35 @@ class HomeViewController: UIViewController {
     ]
     
     let movieContents: [Contents] = [
-        Contents(category: .Movie, location: "서울", image: UIImage(named: "movieSeoul")),
-        Contents(category: .Movie, location: "대전", image: UIImage(named: "movieDaejeon")),
-        Contents(category: .Movie, location: "광주", image: UIImage(named: "movieGwangju"))
+        Contents(category: .Movie, location: "서울", image: UIImage(named: "image-1")),
+        Contents(category: .Movie, location: "대전", image: UIImage(named: "image-2")),
+        Contents(category: .Movie, location: "광주", image: UIImage(named: "image-3")),
+        Contents(category: .Movie, location: "광주", image: UIImage(named: "image-4")),
+        Contents(category: .Movie, location: "광주", image: UIImage(named: "image-5")),
+        Contents(category: .Movie, location: "광주", image: UIImage(named: "image-6"))
     ]
     
     let concertContents: [Contents] = [
-        Contents(category: .Concert, location: "서울", image: UIImage(named: "concertSeoul")),
-        Contents(category: .Concert, location: "대전", image: UIImage(named: "concertDaejeon")),
-        Contents(category: .Concert, location: "광주", image: UIImage(named: "concertGwangju"))
+        Contents(category: .Concert, location: "서울", image: UIImage(named: "image-7")),
+        Contents(category: .Concert, location: "서울", image: UIImage(named: "image-8")),
+        Contents(category: .Concert, location: "서울", image: UIImage(named: "image-9")),
+        Contents(category: .Concert, location: "서울", image: UIImage(named: "image-10")),
+        Contents(category: .Concert, location: "서울", image: UIImage(named: "image-11")),
+        Contents(category: .Concert, location: "서울", image: UIImage(named: "image-12"))
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
-        self.title = "홈"
+        view.backgroundColor = .mainColor()
+        self.title = "모두의 씨네"
+        
+        // 네비게이션 타이틀 색상 설정
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = .mainColor() // 네비게이션 바 배경색
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white] // 타이틀 텍스트 색상
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
         setupScrollView()
         setupStackView()
@@ -57,7 +63,7 @@ class HomeViewController: UIViewController {
         view.addSubview(scrollView)
         
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor), // safeAreaLayoutGuide 대신 view의 topAnchor
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
@@ -66,7 +72,7 @@ class HomeViewController: UIViewController {
     
     private func setupStackView() {
         stackView.axis = .vertical
-        stackView.spacing = 20
+        stackView.spacing = 5
         stackView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.addSubview(stackView)
         
@@ -79,5 +85,3 @@ class HomeViewController: UIViewController {
         ])
     }
 }
-
-

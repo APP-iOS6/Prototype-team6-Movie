@@ -24,6 +24,7 @@
 		BD0EE6F52C7D8FBC000D503C /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EE6F42C7D8FBC000D503C /* Date+Extension.swift */; };
 		BD0EE6F72C7D970E000D503C /* ContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EE6F62C7D970E000D503C /* ContentsView.swift */; };
 		BD0EE6F92C7D97AE000D503C /* ContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EE6F82C7D97AE000D503C /* ContentCell.swift */; };
+		BD0EE6FB2C7DA4C1000D503C /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EE6FA2C7DA4C1000D503C /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		BD0EE6F42C7D8FBC000D503C /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		BD0EE6F62C7D970E000D503C /* ContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsView.swift; sourceTree = "<group>"; };
 		BD0EE6F82C7D97AE000D503C /* ContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCell.swift; sourceTree = "<group>"; };
+		BD0EE6FA2C7DA4C1000D503C /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			children = (
 				BD0EE6AF2C7D5EE8000D503C /* UIFont+Extension.swift */,
 				BD0EE6F42C7D8FBC000D503C /* Date+Extension.swift */,
+				BD0EE6FA2C7DA4C1000D503C /* UIColor+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				BD0EE6E82C7D6BA0000D503C /* MyPageViewController.swift in Sources */,
 				7736C1B52C7D931A008FD5BD /* RecruitmentModel.swift in Sources */,
 				BD0EE6892C7C7584000D503C /* AppDelegate.swift in Sources */,
+				BD0EE6FB2C7DA4C1000D503C /* UIColor+Extension.swift in Sources */,
 				BD0EE6EF2C7D6BC4000D503C /* BaseViewController.swift in Sources */,
 				BD0EE6ED2C7D6BBA000D503C /* HomeViewController.swift in Sources */,
 				BD0EE6F32C7D8E24000D503C /* Contents.swift in Sources */,

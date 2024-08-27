@@ -13,7 +13,11 @@ class ContentsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     private let collectionView: UICollectionView
     private let contents: [Contents]
     private let widthSize = 98
-    private let heightSize = 180
+    private let heightSize = 150
+    private let titleButton = UIButton(type: .system)
+    var onTitleButtonTapped: (() -> Void)?
+
+   
     init(contents: [Contents]) {
         self.contents = contents
         
@@ -23,13 +27,34 @@ class ContentsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
         layout.minimumLineSpacing = 10
         
         self.collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        self.collectionView.backgroundColor = .mainColor()
         super.init(frame: .zero)
-        
+        self.backgroundColor = .mainColor()
+        setupTitleButton(title: contents[0].category.rawValue)
         setupCollectionView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupTitleButton(title: String) {
+        titleButton.setTitle("\(title) >", for: .normal)
+        titleButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        titleButton.setTitleColor(.white, for: .normal)
+        titleButton.contentHorizontalAlignment = .left
+        titleButton.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(titleButton)
+        // UIButton 클릭 시 클로저 호출
+        titleButton.addAction(UIAction(handler: { [weak self] _ in
+            self?.onTitleButtonTapped?()
+        }), for: .touchUpInside)
+        
+        NSLayoutConstraint.activate([
+            titleButton.topAnchor.constraint(equalTo: topAnchor),
+            titleButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            titleButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+        ])
     }
     
     private func setupCollectionView() {
@@ -40,7 +65,7 @@ class ContentsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
         addSubview(collectionView)
         
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: topAnchor),
+            collectionView.topAnchor.constraint(equalTo: titleButton.bottomAnchor, constant: 3),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),

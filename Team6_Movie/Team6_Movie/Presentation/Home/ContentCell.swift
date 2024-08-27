@@ -21,7 +21,7 @@ class ContentCell: UICollectionViewCell {
         contentView.addSubview(imageView)
         
         dateLabel.font = UIFont.boldSystemFont(ofSize: 8)
-        dateLabel.textColor = .darkGray
+        dateLabel.textColor = .white
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(dateLabel)
         
