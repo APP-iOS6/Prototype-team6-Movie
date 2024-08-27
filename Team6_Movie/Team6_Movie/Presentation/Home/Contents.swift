@@ -18,34 +18,34 @@ struct Contents {
 }
 
 enum ContentCategory: String, CaseIterable {
-    case KBO
+    case Sports
     case Movie
     case Concert
 }
 
 let kboContents: [Contents] = [
-    Contents(category: .KBO, location: "서울", image: UIImage(named: "image-19")),
-    Contents(category: .KBO, location: "대전", image: UIImage(named: "image-20")),
-    Contents(category: .KBO, location: "광주", image: UIImage(named: "image-22")),
-    Contents(category: .KBO, location: "서울", image: UIImage(named: "image-23")),
-    Contents(category: .KBO, location: "대전", image: UIImage(named: "image-24")),
-    Contents(category: .KBO, location: "광주", image: UIImage(named: "image-25"))
+    Contents(category: .Sports, location: "서울", image: UIImage(named: "sport1")),
+    Contents(category: .Sports, location: "대전", image: UIImage(named: "sport2")),
+    Contents(category: .Sports, location: "광주", image: UIImage(named: "sport3")),
+    Contents(category: .Sports, location: "서울", image: UIImage(named: "sport4")),
+    Contents(category: .Sports, location: "대전", image: UIImage(named: "sport5")),
+    Contents(category: .Sports, location: "광주", image: UIImage(named: "sport7"))
 ]
 
 let movieContents: [Contents] = [
-    Contents(category: .Movie, location: "서울", image: UIImage(named: "image-1")),
-    Contents(category: .Movie, location: "대전", image: UIImage(named: "image-2")),
-    Contents(category: .Movie, location: "광주", image: UIImage(named: "image-3")),
-    Contents(category: .Movie, location: "광주", image: UIImage(named: "image-4")),
-    Contents(category: .Movie, location: "광주", image: UIImage(named: "image-5")),
-    Contents(category: .Movie, location: "광주", image: UIImage(named: "image-6"))
+    Contents(category: .Movie, location: "서울", image: UIImage(named: "animation1")),
+    Contents(category: .Movie, location: "대전", image: UIImage(named: "animation2")),
+    Contents(category: .Movie, location: "광주", image: UIImage(named: "animation3")),
+    Contents(category: .Movie, location: "광주", image: UIImage(named: "animation4")),
+    Contents(category: .Movie, location: "광주", image: UIImage(named: "animation5")),
+    Contents(category: .Movie, location: "광주", image: UIImage(named: "animation6"))
 ]
 
 let concertContents: [Contents] = [
-    Contents(category: .Concert, location: "서울", image: UIImage(named: "image-7")),
-    Contents(category: .Concert, location: "서울", image: UIImage(named: "image-8")),
-    Contents(category: .Concert, location: "서울", image: UIImage(named: "image-9")),
-    Contents(category: .Concert, location: "서울", image: UIImage(named: "image-10")),
-    Contents(category: .Concert, location: "서울", image: UIImage(named: "image-11")),
-    Contents(category: .Concert, location: "서울", image: UIImage(named: "image-12"))
+    Contents(category: .Concert, location: "서울", image: UIImage(named: "concert1")),
+    Contents(category: .Concert, location: "서울", image: UIImage(named: "concert2")),
+    Contents(category: .Concert, location: "서울", image: UIImage(named: "concert3")),
+    Contents(category: .Concert, location: "서울", image: UIImage(named: "concert4")),
+    Contents(category: .Concert, location: "서울", image: UIImage(named: "concert5")),
+    Contents(category: .Concert, location: "서울", image: UIImage(named: "concert6"))
 ]

@@ -24,14 +24,14 @@ class CategoryContentsViewController: UIViewController {
     
     public func setCategory(_ category: ContentCategory) {
         switch category {
-        case .KBO:
+        case .Sports:
             contents = kboContents
         case .Movie:
             contents = movieContents
         case .Concert:
             contents = concertContents
         }
-        
+        self.title = category.rawValue
         if isViewLoaded {
             collectionView.reloadData()
         }
