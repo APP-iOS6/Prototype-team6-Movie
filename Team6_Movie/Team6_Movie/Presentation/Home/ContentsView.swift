@@ -16,7 +16,7 @@ class ContentsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     private let heightSize = 150
     private let titleButton = UIButton(type: .system)
     var onItemSelected: ((Contents) -> Void)?
-    var onTitleButtonTapped: (() -> Void)?
+    var onTitleButtonTapped: ((ContentCategory) -> Void)?
 
    
     init(contents: [Contents]) {
@@ -41,14 +41,15 @@ class ContentsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     
     private func setupTitleButton(title: String) {
         titleButton.setTitle("\(title) >", for: .normal)
-        titleButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        titleButton.titleLabel?.font = .bold24
         titleButton.setTitleColor(.white, for: .normal)
         titleButton.contentHorizontalAlignment = .left
         titleButton.translatesAutoresizingMaskIntoConstraints = false
         addSubview(titleButton)
         // UIButton 클릭 시 클로저 호출
         titleButton.addAction(UIAction(handler: { [weak self] _ in
-            self?.onTitleButtonTapped?()
+            guard let self = self else { return }
+            self.onTitleButtonTapped?(self.contents[0].category)
         }), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
@@ -85,8 +86,9 @@ class ContentsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
         cell.configure(with: content)
         return cell
     }
-}
-
-#Preview {
-    ContentsView(contents: content)
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedContent = contents[indexPath.item]
+        onItemSelected?(selectedContent) // 선택된 셀이 있을 경우 클로저 호출
+    }
 }

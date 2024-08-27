@@ -247,7 +247,4 @@ class PartyCell: UITableViewCell {
     }
 }
 
-#Preview {
-    RecruitmentViewController()
-}
 

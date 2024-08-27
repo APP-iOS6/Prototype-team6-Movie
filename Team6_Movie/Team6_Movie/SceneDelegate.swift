@@ -25,10 +25,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let searchNavController = UINavigationController(rootViewController: searchViewController)
         let homeNavController = UINavigationController(rootViewController: homeViewController)
         
-        homeViewController.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
-        searchViewController.tabBarItem = UITabBarItem(title: "Search", image: UIImage(systemName: "magnifyingglass"), tag: 1)
-        recruitmentViewController.tabBarItem = UITabBarItem(title: "Recruitment", image: UIImage(systemName: "person.3"), tag: 2)
-        myPageViewController.tabBarItem = UITabBarItem(title: "My Page", image: UIImage(systemName: "person"), tag: 3)
+        homeViewController.tabBarItem = UITabBarItem(title: "홈", image: UIImage(systemName: "house"), tag: 0)
+        searchViewController.tabBarItem = UITabBarItem(title: "검색", image: UIImage(systemName: "magnifyingglass"), tag: 1)
+        recruitmentViewController.tabBarItem = UITabBarItem(title: "모집", image: UIImage(systemName: "person.3"), tag: 2)
+        myPageViewController.tabBarItem = UITabBarItem(title: "마이 페이지", image: UIImage(systemName: "person"), tag: 3)
         
         // 4. 탭바 컨트롤러를 생성하고 네비게이션 컨트롤러들을 추가합니다.
         let tabBarController = UITabBarController()
