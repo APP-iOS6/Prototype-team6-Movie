@@ -13,6 +13,7 @@ struct Party {
     let subText: String
 }
 
+
 let partys = [
  Party(imageFileName: "image 28",
        mainText: "아임 히어로-더 스타디움",

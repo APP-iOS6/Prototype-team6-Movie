@@ -34,6 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [homeNavController, searchNavController, recruitmentNavController, myPageNavController]
         
+
         // 탭바 외관 설정
         let appearance = UITabBarAppearance()
         appearance.configureWithOpaqueBackground() // 불투명 배경 설정

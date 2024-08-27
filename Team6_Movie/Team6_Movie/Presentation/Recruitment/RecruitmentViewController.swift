@@ -3,11 +3,13 @@ import UIKit
 let buttonCategory = ["KBO", "콘서트", "영화", "스포츠", "애니메이션"]
 
 class RecruitmentViewController: UIViewController {
+
     let tableView = UITableView(frame: .zero, style: .plain)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         self.title = "모집"
         
         view.backgroundColor = UIColor.darkGray
@@ -15,6 +17,7 @@ class RecruitmentViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+
         tableView.backgroundColor = UIColor.darkGray
         
         tableView.register(CategoryCell.self, forCellReuseIdentifier: "CategoryCell")
@@ -31,6 +34,7 @@ class RecruitmentViewController: UIViewController {
         ])
     }
 }
+
 // MARK: - UITableViewDataSource, UITableViewDelegate
 extension RecruitmentViewController: UITableViewDataSource, UITableViewDelegate {
     
@@ -43,6 +47,7 @@ extension RecruitmentViewController: UITableViewDataSource, UITableViewDelegate 
         case 0:
             return 1
         case 1:
+
             return partys.count
         default:
             return 0
@@ -54,6 +59,7 @@ extension RecruitmentViewController: UITableViewDataSource, UITableViewDelegate 
             let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
             return cell
         } else {
+
             let cell = tableView.dequeueReusableCell(withIdentifier: "PartyCell", for: indexPath) as! PartyCell
             let party = partys[indexPath.row]
             cell.imageView?.image = UIImage(named: party.imageFileName)
@@ -77,6 +83,7 @@ extension RecruitmentViewController: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+
     
     //footer(아래에 선) 생기는 문제 해결
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
@@ -98,6 +105,7 @@ class CategoryCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         stackView = UIStackView()
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+
         
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
@@ -106,6 +114,7 @@ class CategoryCell: UITableViewCell {
         for category in buttonCategory {
             let button = UIButton(type: .system)
             button.setTitle(category, for: .normal)
+
             button.setTitleColor(.white, for: .normal)
             stackView.addArrangedSubview(button)
         }
@@ -119,6 +128,7 @@ class CategoryCell: UITableViewCell {
             stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             stackView.heightAnchor.constraint(equalToConstant: 80)
         ])
+
         
         contentView.backgroundColor = UIColor.darkGray
     }
