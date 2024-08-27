@@ -11,8 +11,7 @@ class MyPageViewController: UIViewController {
     
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.contentSize = CGSize(width: view.frame.width, height: 1000)
-        
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
     
@@ -27,7 +26,8 @@ class MyPageViewController: UIViewController {
     lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "Group 12")
-        
+        imageView.contentMode = .scaleAspectFit
+        imageView.layer.masksToBounds = true
         return imageView
     }()
     
@@ -95,7 +95,8 @@ class MyPageViewController: UIViewController {
         button.setTitle(" 작성한 게시글 및 댓글", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.tintColor = .white
-        
+//        button.layoutMargins = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+
         button.addAction(UIAction(handler: { _ in
             print("작성한 게시글 및 댓글 확인")
         }), for: .touchUpInside)
@@ -121,6 +122,9 @@ class MyPageViewController: UIViewController {
         return imageView
     }()
     
+    lazy var divider1 = createDivider()
+    lazy var divider2 = createDivider()
+    lazy var divider3 = createDivider()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -135,9 +139,7 @@ class MyPageViewController: UIViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(stackView)
         
-        let divider1 = createDivider()
-        let divider2 = createDivider()
-        let divider3 = createDivider()
+        
         
         stackView.addArrangedSubview(profileImageView)
         stackView.addArrangedSubview(profileName)
@@ -170,33 +172,31 @@ class MyPageViewController: UIViewController {
         NSLayoutConstraint.activate([
             // 스크롤뷰 제약 조건
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
             // 스택뷰 제약 조건
             stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-            
+            stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor), // StackView의 너비를 ScrollView와 같게 설정
+
             // 프로필 이미지뷰
-            profileImageView.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 20),
-            profileImageView.centerXAnchor.constraint(equalTo: stackView.centerXAnchor),
-            profileImageView.widthAnchor.constraint(equalToConstant: 30),
-//            profileImageView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -100),
-//            profileImageView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 100),
-            profileImageView.heightAnchor.constraint(equalTo: profileImageView.widthAnchor),
+            profileImageView.heightAnchor.constraint(equalToConstant: 64),
+            profileImageView.widthAnchor.constraint(equalToConstant: 64),
+            
             
             // 프로필 수정 버튼
             profileButton.heightAnchor.constraint(equalToConstant: 35),
             profileButton.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 250),
             profileButton.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -50),
             
+            divider1.heightAnchor.constraint(equalToConstant: 0.2),
             // 신청한 파티 레이블
             partyNameLabel.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 20),
-            partyNameLabel.topAnchor.constraint(equalTo: profileButton.bottomAnchor, constant: 40),
+            //partyNameLabel.topAnchor.constraint(equalTo: profileButton.bottomAnchor, constant: 40),
             
             // 파티 이미지 버튼
             partyImageButton.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: -250),
@@ -208,6 +208,8 @@ class MyPageViewController: UIViewController {
             partyInfo.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 20),
             partyInfo.topAnchor.constraint(equalTo: partyImageButton.bottomAnchor, constant: 10),
             
+            divider2.heightAnchor.constraint(equalToConstant: 0.2),
+
             // 커뮤니티 레이블
             communityLabel.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 20),
             communityLabel.topAnchor.constraint(equalTo: partyImageButton.bottomAnchor, constant: 40),
@@ -216,9 +218,10 @@ class MyPageViewController: UIViewController {
             communityButton.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: -190),
             communityButton.topAnchor.constraint(equalTo: communityLabel.bottomAnchor, constant: 20),
             
+            divider3.heightAnchor.constraint(equalToConstant: 0.2),
+
             // 캘린더 레이블
             calendarLabel.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 20),
-            calendarLabel.topAnchor.constraint(equalTo: communityButton.bottomAnchor, constant: 40),
             
             // 캘린더 이미지뷰
             calendarImageView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 20),
@@ -226,10 +229,6 @@ class MyPageViewController: UIViewController {
             calendarImageView.widthAnchor.constraint(equalToConstant: 100),
             calendarImageView.heightAnchor.constraint(equalTo: calendarImageView.widthAnchor, multiplier: 1.2),
             
-            // Divider
-            stackView.arrangedSubviews[3].heightAnchor.constraint(equalToConstant: 0.2),
-            stackView.arrangedSubviews[7].heightAnchor.constraint(equalToConstant: 0.2),
-            stackView.arrangedSubviews[10].heightAnchor.constraint(equalToConstant: 0.2),
         ])
     }
     
