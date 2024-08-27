@@ -10,7 +10,7 @@ import UIKit
 class ContentCell: UICollectionViewCell {
     
     private let imageView = UIImageView()
-    private let titleLabel = UILabel()
+    private let dateLabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,10 +20,10 @@ class ContentCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(imageView)
         
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 16)
-        titleLabel.textColor = .black
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(titleLabel)
+        dateLabel.font = UIFont.boldSystemFont(ofSize: 8)
+        dateLabel.textColor = .darkGray
+        dateLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(dateLabel)
         
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
@@ -31,9 +31,8 @@ class ContentCell: UICollectionViewCell {
             imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             imageView.heightAnchor.constraint(equalToConstant: 141),
             
-            titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8),
-            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8)
+            dateLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 4),
+            dateLabel.centerXAnchor.constraint(equalTo: imageView.centerXAnchor)
         ])
     }
     
@@ -44,6 +43,6 @@ class ContentCell: UICollectionViewCell {
     // 콘텐츠 설정
     func configure(with content: Contents) {
         imageView.image = content.image
-        titleLabel.text = "\(content.category.rawValue) - \(content.location)"
+        dateLabel.text = "\(content.date.toFormattedString()) / \(content.location)"
     }
 }

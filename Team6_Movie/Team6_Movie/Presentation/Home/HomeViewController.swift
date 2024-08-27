@@ -13,12 +13,12 @@ class HomeViewController: UIViewController {
     private let stackView = UIStackView()
     
     let kboContents: [Contents] = [
-        Contents(category: .KBO, location: "서울", image: UIImage(named: "person")),
-        Contents(category: .KBO, location: "대전", image: UIImage(named: "person")),
-        Contents(category: .KBO, location: "광주", image: UIImage(named: "person")),
-        Contents(category: .KBO, location: "서울", image: UIImage(named: "person")),
-        Contents(category: .KBO, location: "대전", image: UIImage(named: "person")),
-        Contents(category: .KBO, location: "광주", image: UIImage(named: "person"))
+        Contents(category: .KBO, location: "서울", image: UIImage(named: "image-19")),
+        Contents(category: .KBO, location: "대전", image: UIImage(named: "image-20")),
+        Contents(category: .KBO, location: "광주", image: UIImage(named: "image-22")),
+        Contents(category: .KBO, location: "서울", image: UIImage(named: "image-23")),
+        Contents(category: .KBO, location: "대전", image: UIImage(named: "image-24")),
+        Contents(category: .KBO, location: "광주", image: UIImage(named: "image-25"))
     ]
     
     let movieContents: [Contents] = [
