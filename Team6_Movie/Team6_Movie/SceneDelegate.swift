@@ -34,6 +34,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [homeNavController, searchNavController, recruitmentNavController, myPageNavController]
         
+        // 탭바 외관 설정
+        let appearance = UITabBarAppearance()
+        appearance.configureWithOpaqueBackground() // 불투명 배경 설정
+        appearance.backgroundColor = .mainColor() // 탭바 배경색 설정
+        appearance.stackedLayoutAppearance.selected.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.stackedLayoutAppearance.selected.iconColor = UIColor.white
+        appearance.stackedLayoutAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.gray]
+        appearance.stackedLayoutAppearance.normal.iconColor = UIColor.gray
+        
+        tabBarController.tabBar.standardAppearance = appearance
+        if #available(iOS 15.0, *) {
+            tabBarController.tabBar.scrollEdgeAppearance = appearance
+        }
+        
+        
         // 5. 윈도우를 생성하고 루트 뷰 컨트롤러로 설정합니다.
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = tabBarController
