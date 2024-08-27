@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7736C1B52C7D931A008FD5BD /* RecruitmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736C1B42C7D931A008FD5BD /* RecruitmentModel.swift */; };
 		BD0EE6892C7C7584000D503C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EE6882C7C7584000D503C /* AppDelegate.swift */; };
 		BD0EE68B2C7C7584000D503C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EE68A2C7C7584000D503C /* SceneDelegate.swift */; };
 		BD0EE68D2C7C7584000D503C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EE68C2C7C7584000D503C /* ViewController.swift */; };
@@ -14,9 +15,16 @@
 		BD0EE6952C7C7586000D503C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD0EE6942C7C7586000D503C /* Assets.xcassets */; };
 		BD0EE6982C7C7586000D503C /* Base in Resources */ = {isa = PBXBuildFile; fileRef = BD0EE6972C7C7586000D503C /* Base */; };
 		BD0EE6B02C7D5EE8000D503C /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EE6AF2C7D5EE8000D503C /* UIFont+Extension.swift */; };
+		BD0EE6E62C7D6B92000D503C /* RecruitmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EE6E52C7D6B92000D503C /* RecruitmentViewController.swift */; };
+		BD0EE6E82C7D6BA0000D503C /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EE6E72C7D6BA0000D503C /* MyPageViewController.swift */; };
+		BD0EE6EB2C7D6BB2000D503C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EE6EA2C7D6BB2000D503C /* SearchViewController.swift */; };
+		BD0EE6ED2C7D6BBA000D503C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EE6EC2C7D6BBA000D503C /* HomeViewController.swift */; };
+		BD0EE6EF2C7D6BC4000D503C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EE6EE2C7D6BC4000D503C /* BaseViewController.swift */; };
+		BD0EE6F12C7D6BCF000D503C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EE6F02C7D6BCF000D503C /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7736C1B42C7D931A008FD5BD /* RecruitmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentModel.swift; sourceTree = "<group>"; };
 		BD0EE6852C7C7584000D503C /* Team6_Movie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Team6_Movie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD0EE6882C7C7584000D503C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD0EE68A2C7C7584000D503C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +34,12 @@
 		BD0EE6972C7C7586000D503C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD0EE6992C7C7586000D503C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD0EE6AF2C7D5EE8000D503C /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		BD0EE6E52C7D6B92000D503C /* RecruitmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentViewController.swift; sourceTree = "<group>"; };
+		BD0EE6E72C7D6BA0000D503C /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		BD0EE6EA2C7D6BB2000D503C /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		BD0EE6EC2C7D6BBA000D503C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BD0EE6EE2C7D6BC4000D503C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		BD0EE6F02C7D6BCF000D503C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +116,7 @@
 		BD0EE6DF2C7D64C8000D503C /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				BD0EE6EE2C7D6BC4000D503C /* BaseViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -110,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				BD0EE68C2C7C7584000D503C /* ViewController.swift */,
+				BD0EE6EC2C7D6BBA000D503C /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -117,6 +133,7 @@
 		BD0EE6E12C7D64DF000D503C /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				BD0EE6EA2C7D6BB2000D503C /* SearchViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -124,6 +141,7 @@
 		BD0EE6E22C7D64E8000D503C /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				BD0EE6E72C7D6BA0000D503C /* MyPageViewController.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -131,6 +149,8 @@
 		BD0EE6E32C7D64FD000D503C /* Recruitment */ = {
 			isa = PBXGroup;
 			children = (
+				BD0EE6E52C7D6B92000D503C /* RecruitmentViewController.swift */,
+				7736C1B42C7D931A008FD5BD /* RecruitmentModel.swift */,
 			);
 			path = Recruitment;
 			sourceTree = "<group>";
@@ -138,6 +158,7 @@
 		BD0EE6E42C7D650D000D503C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BD0EE6F02C7D6BCF000D503C /* Model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,9 +235,16 @@
 			files = (
 				BD0EE6932C7C7584000D503C /* Team6_Movie.xcdatamodeld in Sources */,
 				BD0EE68D2C7C7584000D503C /* ViewController.swift in Sources */,
+				BD0EE6EB2C7D6BB2000D503C /* SearchViewController.swift in Sources */,
+				BD0EE6E82C7D6BA0000D503C /* MyPageViewController.swift in Sources */,
+				7736C1B52C7D931A008FD5BD /* RecruitmentModel.swift in Sources */,
 				BD0EE6892C7C7584000D503C /* AppDelegate.swift in Sources */,
+				BD0EE6EF2C7D6BC4000D503C /* BaseViewController.swift in Sources */,
+				BD0EE6ED2C7D6BBA000D503C /* HomeViewController.swift in Sources */,
 				BD0EE6B02C7D5EE8000D503C /* UIFont+Extension.swift in Sources */,
+				BD0EE6F12C7D6BCF000D503C /* Model.swift in Sources */,
 				BD0EE68B2C7C7584000D503C /* SceneDelegate.swift in Sources */,
+				BD0EE6E62C7D6B92000D503C /* RecruitmentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +388,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 92U58L5CU9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Team6_Movie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -387,6 +416,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 92U58L5CU9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Team6_Movie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
