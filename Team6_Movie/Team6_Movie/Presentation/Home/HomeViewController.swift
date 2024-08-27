@@ -32,12 +32,23 @@ class HomeViewController: UIViewController {
             contentsView.onItemSelected = {[weak self] content in
                 self?.showDetailViewController(for: content)
             }
+            contentsView.onTitleButtonTapped = {[weak self] category in
+                self?.showCategoryViewController(for: category)
+            }
         }
         
         stackView.addArrangedSubview(kboView)
         stackView.addArrangedSubview(movieView)
         stackView.addArrangedSubview(concertView)
     }
+    
+    private func showCategoryViewController(for category: ContentCategory) {
+        
+        let detailVC = CategoryContentsViewController()
+        detailVC.setCategory(category)
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
     
     private func showDetailViewController(for content: Contents) {
         let detailVC = DetailViewController()

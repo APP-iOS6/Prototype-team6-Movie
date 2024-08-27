@@ -16,7 +16,7 @@ class ContentsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     private let heightSize = 150
     private let titleButton = UIButton(type: .system)
     var onItemSelected: ((Contents) -> Void)?
-    var onTitleButtonTapped: (() -> Void)?
+    var onTitleButtonTapped: ((ContentCategory) -> Void)?
 
    
     init(contents: [Contents]) {
@@ -48,7 +48,8 @@ class ContentsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
         addSubview(titleButton)
         // UIButton 클릭 시 클로저 호출
         titleButton.addAction(UIAction(handler: { [weak self] _ in
-            self?.onTitleButtonTapped?()
+            guard let self = self else { return }
+            self.onTitleButtonTapped?(self.contents[0].category)
         }), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
