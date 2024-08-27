@@ -7,21 +7,71 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: BaseViewController {
     
     private var content: Contents?
     
     // UI 요소들
-    private let imageView = UIImageView()
-    private let titleLabel = UILabel()
-    private let dateLabel = UILabel()
-    private let descriptionLabel = UILabel()
-    private let applyButton = UIButton(type: .system)
+    private lazy var imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        return imageView
+    }()
+    
+    private lazy var titleLabel: UILabel = {
+        let titleLabel = UILabel()
+        titleLabel.font = .bold24
+        titleLabel.textColor = .white
+        titleLabel.numberOfLines = 0
+        return titleLabel
+    }()
+    
+    private lazy var dateLabel: UILabel = {
+        let dateLabel = UILabel()
+        dateLabel.font = .regular20
+        dateLabel.textColor = .lightGray
+        return dateLabel
+    }()
+    
+    private lazy var descriptionLabel: UILabel = {
+        let descriptionLabel = UILabel()
+        descriptionLabel.font = .regular16
+        descriptionLabel.textColor = .white
+        descriptionLabel.numberOfLines = 0
+        descriptionLabel.text = "상세 설명"
+        return descriptionLabel
+    }()
+    
+    private lazy var applyButton: UIButton = {
+        let applyButton = UIButton()
+        if let buttonImage = UIImage(named: "popcorn") {
+            let resizedImage = buttonImage.resized(toWidth: 30) // 이미지의 너비를 24로 조정
+            applyButton.setImage(resizedImage!.withRenderingMode(.alwaysOriginal), for: .normal)
+        }
+        applyButton.setTitle(" 신청하기", for: .normal)
+        applyButton.setTitleColor(.black, for: .normal) // 텍스트 색상을 검정색으로 설정
+        applyButton.titleLabel?.font = .bold20
+        applyButton.backgroundColor = .gray
+        applyButton.tintColor = .black
+        applyButton.layer.cornerRadius = 10
+        applyButton.translatesAutoresizingMaskIntoConstraints = false
+        applyButton.addTarget(self, action: #selector(applyButtonTapped), for: .touchUpInside)
+        return applyButton
+    }()
+    
+    private lazy var stackView: UIStackView = {
+       let stackView = UIStackView(arrangedSubviews: [imageView, titleLabel, dateLabel, descriptionLabel])
+        stackView.axis = .vertical
+        stackView.spacing = 16
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .mainColor()
-        
+        self.title = "상세 정보"
         setupUI()
         updateUI()
         setupNavigationBar()
@@ -30,66 +80,22 @@ class DetailViewController: UIViewController {
     // MARK: - Public Method
     public func setContent(_ content: Contents) {
         self.content = content
-        
-        // 만약 view가 이미 로드된 상태에서 데이터를 설정하는 경우
         if isViewLoaded {
             updateUI()
         }
     }
     
     // MARK: - UI 설정
-    private func setupUI() {
-        // 이미지 설정
-        imageView.contentMode = .scaleAspectFit
-        imageView.clipsToBounds = true
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
-        
-        // 제목 라벨 설정
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
-        titleLabel.textColor = .white
-        titleLabel.numberOfLines = 0
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        // 날짜 라벨 설정
-        dateLabel.font = UIFont.systemFont(ofSize: 18)
-        dateLabel.textColor = .lightGray
-        dateLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        // 설명 라벨 설정
-        descriptionLabel.font = UIFont.systemFont(ofSize: 16)
-        descriptionLabel.textColor = .white
-        descriptionLabel.numberOfLines = 0
-        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        descriptionLabel.text = "상세 설명"
-        
-        // 스택뷰 설정
-        let stackView = UIStackView(arrangedSubviews: [imageView, titleLabel, dateLabel, descriptionLabel])
-        stackView.axis = .vertical
-        stackView.spacing = 16
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+    override func setupUI() {
         view.addSubview(stackView)
+        view.addSubview(applyButton)
         
-        // 오토레이아웃 설정
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
-        
-        if let buttonImage = UIImage(named: "Group 14") {
-            applyButton.setImage(buttonImage.withRenderingMode(.alwaysOriginal), for: .normal)
-        }
-        applyButton.setTitle(" 신청하기", for: .normal)
-        applyButton.tintColor = .black
-        applyButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        applyButton.backgroundColor = .white
-        applyButton.layer.cornerRadius = 10
-        applyButton.translatesAutoresizingMaskIntoConstraints = false
-        applyButton.addTarget(self, action: #selector(applyButtonTapped), for: .touchUpInside)
-        view.addSubview(applyButton)
-        
-        // "신청하기" 버튼 오토레이아웃 설정
+    
         NSLayoutConstraint.activate([
             applyButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             applyButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
@@ -99,9 +105,9 @@ class DetailViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        // 네비게이션 바에 공유 버튼 추가
         let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareContent))
         navigationItem.rightBarButtonItem = shareButton
+        navigationItem.rightBarButtonItem?.tintColor = .white
     }
     
     // MARK: - UI 업데이트
@@ -130,10 +136,11 @@ class DetailViewController: UIViewController {
     }
     
     @objc private func applyButtonTapped() {
-        // 신청하기 버튼 클릭 시 동작 처리
         let alert = UIAlertController(title: "신청하시겠습니까?", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "확인", style: .default, handler: { [weak self] _ in
+                self?.navigationController?.popViewController(animated: true)
+        }))
         present(alert, animated: true, completion: nil)
     }
 }

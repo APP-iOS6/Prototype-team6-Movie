@@ -20,8 +20,10 @@ class ContentCell: UICollectionViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(imageView)
         
-        dateLabel.font = UIFont.boldSystemFont(ofSize: 8)
+        dateLabel.font = .semibold12
         dateLabel.textColor = .white
+        dateLabel.numberOfLines = 2
+        dateLabel.textAlignment = .center
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(dateLabel)
         
@@ -43,7 +45,7 @@ class ContentCell: UICollectionViewCell {
     // 콘텐츠 설정
     func configure(with content: Contents) {
         imageView.image = content.image
-        dateLabel.text = "\(content.date.toFormattedString()) / \(content.location)"
+        dateLabel.text = "\(content.date.toFormattedString()) \n \(content.location)"
     }
     
 

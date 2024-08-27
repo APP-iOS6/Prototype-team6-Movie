@@ -239,7 +239,4 @@ class MyPageViewController: UIViewController {
     }
 }
 
-#Preview {
-    MyPageViewController()
-}
 

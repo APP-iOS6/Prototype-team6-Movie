@@ -24,14 +24,14 @@ class CategoryViewCell: UICollectionViewCell {
         contentView.addSubview(imageView)
         
         // 타이틀 라벨 설정
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 12)
+        titleLabel.font = .semibold16
         titleLabel.textColor = .white
         titleLabel.numberOfLines = 2 // 타이틀이 두 줄까지 표시되도록 설정
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(titleLabel)
         
         // 날짜 라벨 설정
-        dateLabel.font = UIFont.systemFont(ofSize: 10)
+        dateLabel.font = .regular10
         dateLabel.textColor = .lightGray
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(dateLabel)
@@ -48,7 +48,7 @@ class CategoryViewCell: UICollectionViewCell {
             
             dateLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
             dateLabel.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
-            dateLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
+            dateLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -4)
         ])
     }
     

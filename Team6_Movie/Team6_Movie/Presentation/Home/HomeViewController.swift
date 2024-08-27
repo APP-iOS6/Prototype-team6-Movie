@@ -1,7 +1,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
     
     private let scrollView = UIScrollView()
     private let stackView = UIStackView()
@@ -11,14 +11,15 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .mainColor()
-        self.title = "모두의 씨네"
+        self.title = "홈"
         
-        // 네비게이션 타이틀 색상 설정
-        let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = .mainColor() // 네비게이션 바 배경색
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.white] // 타이틀 텍스트 색상
-        navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        // 네비게이션 타이틀에 이미지 설정
+        let imageView = UIImageView(image: UIImage(named: "icon"))
+        imageView.contentMode = .scaleAspectFit
+        navigationItem.titleView = imageView
+        
+        // 네비게이션 바 스타일 설정
+        
         
         setupScrollView()
         setupStackView()

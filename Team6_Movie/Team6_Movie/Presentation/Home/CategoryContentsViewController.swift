@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CategoryContentsViewController: UIViewController {
+class CategoryContentsViewController: BaseViewController {
     
     private var contents: [Contents] = [] // 카테고리 콘텐츠 배열
     
@@ -40,13 +40,11 @@ class CategoryContentsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .mainColor()
-        
         setupUI()
         collectionView.reloadData()
     }
     
-    private func setupUI() {
+    override func setupUI() {
         // UICollectionView 설정
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -89,7 +87,6 @@ extension CategoryContentsViewController: UICollectionViewDelegate, UICollection
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedContent = contents[indexPath.item]
-        // 선택된 콘텐츠 처리 (예: 상세 페이지로 이동)
         let detailVC = DetailViewController()
         detailVC.setContent(selectedContent)
         navigationController?.pushViewController(detailVC, animated: true)

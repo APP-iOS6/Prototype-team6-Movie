@@ -41,7 +41,7 @@ class ContentsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     
     private func setupTitleButton(title: String) {
         titleButton.setTitle("\(title) >", for: .normal)
-        titleButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        titleButton.titleLabel?.font = .bold24
         titleButton.setTitleColor(.white, for: .normal)
         titleButton.contentHorizontalAlignment = .left
         titleButton.translatesAutoresizingMaskIntoConstraints = false
