@@ -45,4 +45,6 @@ class ContentCell: UICollectionViewCell {
         imageView.image = content.image
         dateLabel.text = "\(content.date.toFormattedString()) / \(content.location)"
     }
+    
+
 }

@@ -85,8 +85,9 @@ class ContentsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
         cell.configure(with: content)
         return cell
     }
-}
-
-#Preview {
-    ContentsView(contents: content)
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedContent = contents[indexPath.item]
+        onItemSelected?(selectedContent) // 선택된 셀이 있을 경우 클로저 호출
+    }
 }
