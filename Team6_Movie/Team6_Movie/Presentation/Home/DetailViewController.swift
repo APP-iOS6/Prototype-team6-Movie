@@ -79,7 +79,7 @@ class DetailViewController: UIViewController {
         
         if let buttonImage = UIImage(named: "Group 14") {
             applyButton.setImage(buttonImage.withRenderingMode(.alwaysOriginal), for: .normal)
-        }        
+        }
         applyButton.setTitle(" 신청하기", for: .normal)
         applyButton.tintColor = .black
         applyButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)

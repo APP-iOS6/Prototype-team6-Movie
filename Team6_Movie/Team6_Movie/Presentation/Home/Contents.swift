@@ -33,8 +33,8 @@ let kboContents: [Contents] = [
 ]
 
 let movieContents: [Contents] = [
-    Contents(category: .Movie, location: "서울", image: UIImage(named: "animation1")),
-    Contents(category: .Movie, location: "대전", image: UIImage(named: "animation2")),
+    Contents(category: .Movie, location: "서울", image: UIImage(named: "animation7")),
+    Contents(category: .Movie, location: "대전", image: UIImage(named: "animation8")),
     Contents(category: .Movie, location: "광주", image: UIImage(named: "animation3")),
     Contents(category: .Movie, location: "광주", image: UIImage(named: "animation4")),
     Contents(category: .Movie, location: "광주", image: UIImage(named: "animation5")),
