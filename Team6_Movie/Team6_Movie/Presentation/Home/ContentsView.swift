@@ -15,6 +15,7 @@ class ContentsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     private let widthSize = 98
     private let heightSize = 150
     private let titleButton = UIButton(type: .system)
+    var onItemSelected: ((Contents) -> Void)?
     var onTitleButtonTapped: (() -> Void)?
 
    
