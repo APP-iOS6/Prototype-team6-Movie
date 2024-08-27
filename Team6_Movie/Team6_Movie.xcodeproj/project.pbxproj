@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7736C1B52C7D931A008FD5BD /* RecruitmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736C1B42C7D931A008FD5BD /* RecruitmentModel.swift */; };
+		97F8FDB42C7DBCE70027A63E /* MyPageEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F8FDB32C7DBCE70027A63E /* MyPageEditViewController.swift */; };
 		BD0EE6892C7C7584000D503C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EE6882C7C7584000D503C /* AppDelegate.swift */; };
 		BD0EE68B2C7C7584000D503C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EE68A2C7C7584000D503C /* SceneDelegate.swift */; };
 		BD0EE6932C7C7584000D503C /* Team6_Movie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD0EE6912C7C7584000D503C /* Team6_Movie.xcdatamodeld */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		7736C1B42C7D931A008FD5BD /* RecruitmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentModel.swift; sourceTree = "<group>"; };
+		97F8FDB32C7DBCE70027A63E /* MyPageEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageEditViewController.swift; sourceTree = "<group>"; };
 		BD0EE6852C7C7584000D503C /* Team6_Movie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Team6_Movie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD0EE6882C7C7584000D503C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD0EE68A2C7C7584000D503C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				BD0EE6E72C7D6BA0000D503C /* MyPageViewController.swift */,
+				97F8FDB32C7DBCE70027A63E /* MyPageEditViewController.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -255,7 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD0EE6932C7C7584000D503C /* Team6_Movie.xcdatamodeld in Sources */,
-				BD0EE7002C7DB4F6000D503C /* DetailViewController.swift in Sources */,
+
 				BD0EE6F92C7D97AE000D503C /* ContentCell.swift in Sources */,
 				BD0EE6F52C7D8FBC000D503C /* Date+Extension.swift in Sources */,
 				BD0EE7042C7DC0F6000D503C /* CategoryViewCell.swift in Sources */,
@@ -269,6 +272,7 @@
 				BD0EE6ED2C7D6BBA000D503C /* HomeViewController.swift in Sources */,
 				BD0EE6F32C7D8E24000D503C /* Contents.swift in Sources */,
 				BD0EE6B02C7D5EE8000D503C /* UIFont+Extension.swift in Sources */,
+				97F8FDB42C7DBCE70027A63E /* MyPageEditViewController.swift in Sources */,
 				BD0EE6F72C7D970E000D503C /* ContentsView.swift in Sources */,
 				BD0EE6F12C7D6BCF000D503C /* Model.swift in Sources */,
 				BD0EE68B2C7C7584000D503C /* SceneDelegate.swift in Sources */,
