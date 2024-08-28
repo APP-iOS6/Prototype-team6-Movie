@@ -5,11 +5,11 @@
 - 빠르게 영화관 응원방(대관한 영화관) 정보 확인
 - 쉬운 예매 시스템
 <p align="left">
-  <img src="https://github.com/user-attachments/assets/8207d5f1-c354-410f-a28b-afdcea201c9c" width="190" height="300" />
-  <img src="https://github.com/user-attachments/assets/a11777bd-f583-4a6c-bd5d-17b4a18b1edc" width="190" height="300" />
-  <img src="https://github.com/user-attachments/assets/07cd5875-5f57-4ae4-bcb1-c2e80f785d18" width="190" height="300" />
-  <img src="https://github.com/user-attachments/assets/9c665600-2d64-44b0-8a53-0963cf13b7fa" width="190" height="300" />
-  <img src="https://github.com/user-attachments/assets/221c3658-750a-486b-b8d9-66f4b8b0d70e" width="190" height="300" />
+  <img src="https://github.com/user-attachments/assets/8207d5f1-c354-410f-a28b-afdcea201c9c" width="200" height="300" />
+  <img src="https://github.com/user-attachments/assets/a11777bd-f583-4a6c-bd5d-17b4a18b1edc" width="200" height="300" />
+  <img src="https://github.com/user-attachments/assets/07cd5875-5f57-4ae4-bcb1-c2e80f785d18" width="200" height="300" />
+  <img src="https://github.com/user-attachments/assets/9c665600-2d64-44b0-8a53-0963cf13b7fa" width="200" height="300" />
+  <img src="https://github.com/user-attachments/assets/221c3658-750a-486b-b8d9-66f4b8b0d70e" width="200" height="300" />
 </p>
 
 # 주요기능
