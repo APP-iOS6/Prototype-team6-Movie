@@ -131,3 +131,8 @@ class DetailViewController: BaseViewController {
         present(alert, animated: true, completion: nil)
     }
 }
+//git add .
+//git commit -m "feat : 마이페이지 뷰"
+//git push origin Hyojeong
+
+

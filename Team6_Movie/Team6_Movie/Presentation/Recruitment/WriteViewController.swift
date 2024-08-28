@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WriteViewController: UIViewController, UINavigationControllerDelegate, UITextFieldDelegate {
+class WriteViewController: BaseViewController, UINavigationControllerDelegate, UITextFieldDelegate {
     
     //전체 스크롤뷰로 지정
     private let scrollView: UIScrollView = {
