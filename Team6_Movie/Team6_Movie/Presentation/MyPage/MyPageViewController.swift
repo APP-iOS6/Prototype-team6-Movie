@@ -101,12 +101,12 @@ class MyPageViewController: BaseViewController {
     
     private lazy var partyImageButtonOne: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "image-24"), for: .normal)
+        button.setImage(UIImage(named: "image 28"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         
         button.addAction(UIAction(handler: { [weak self] _ in
             let detailVC = DetailViewController()
-            detailVC.setContent(Contents(category: .Movie, location: "서울", image: UIImage(named: "animation12")))
+            detailVC.setContent(Contents(category: .Concert, location: "서울", image: UIImage(named: "concert7")))
             self?.navigationController?.pushViewController(detailVC, animated: true)
         }), for: .touchUpInside)
         
@@ -115,12 +115,25 @@ class MyPageViewController: BaseViewController {
     
     private lazy var partyImageButtonTwo: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "image 28"), for: .normal)
+        button.setImage(UIImage(named: "image-24"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         
         button.addAction(UIAction(handler: { [weak self] _ in
             let detailVC = DetailViewController()
-            detailVC.setContent(Contents(category: .Concert, location: "서울", image: UIImage(named: "concert7")))
+            detailVC.setContent(Contents(category: .Movie, location: "서울", image: UIImage(named: "animation12")))
+            self?.navigationController?.pushViewController(detailVC, animated: true)        }), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    private lazy var partyImageButtonThree: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "animation3"), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        button.addAction(UIAction(handler: { [weak self] _ in
+            let detailVC = DetailViewController()
+            detailVC.setContent(Contents(category: .Movie, location: "서울", image: UIImage(named: "animation3")))
             self?.navigationController?.pushViewController(detailVC, animated: true)        }), for: .touchUpInside)
         
         return button
@@ -128,7 +141,7 @@ class MyPageViewController: BaseViewController {
     
     private lazy var partyInfoOne: UILabel = {
         let label = UILabel()
-        label.text = "08/15 17:00, 서울"
+        label.text = "08/27 17:00, 서울"
         label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: 10)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -137,7 +150,16 @@ class MyPageViewController: BaseViewController {
     
     private lazy var partyInfoTwo: UILabel = {
         let label = UILabel()
-        label.text = "08/27 17:00, 서울"
+        label.text = "08/15 17:00, 서울"
+        label.textColor = .white
+        label.font = UIFont.boldSystemFont(ofSize: 10)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private lazy var partyInfoThree: UILabel = {
+        let label = UILabel()
+        label.text = "08/15 12:00, 서울"
         label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: 10)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -176,13 +198,17 @@ class MyPageViewController: BaseViewController {
         return label
     }()
     
-    private lazy var calendarImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "calendar")
-        imageView.layer.cornerRadius = 15
-        imageView.layer.masksToBounds = true
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
+    private lazy var calendarImageButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "calendar"), for: .normal)
+        button.layer.cornerRadius = 15
+        button.layer.masksToBounds = true
+        button.addAction(UIAction(handler: { _ in
+            let viewController = MyPageCalendarViewController()
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
     
     private lazy var divider1: UIView = {
@@ -237,6 +263,8 @@ class MyPageViewController: BaseViewController {
         wantedPartyView.addSubview(partyInfoOne)
         wantedPartyView.addSubview(partyImageButtonTwo)
         wantedPartyView.addSubview(partyInfoTwo)
+        wantedPartyView.addSubview(partyImageButtonThree)
+        wantedPartyView.addSubview(partyInfoThree)
         wantedPartyView.addSubview(divider2)
         
         comminityView.addSubview(communityLabel)
@@ -244,7 +272,7 @@ class MyPageViewController: BaseViewController {
         comminityView.addSubview(divider3)
         
         calendarView.addSubview(calendarLabel)
-        calendarView.addSubview(calendarImageView)
+        calendarView.addSubview(calendarImageButton)
     }
     
     func setupLayout() {
@@ -323,6 +351,14 @@ class MyPageViewController: BaseViewController {
             partyInfoTwo.centerXAnchor.constraint(equalTo: partyImageButtonTwo.centerXAnchor),
             partyInfoTwo.topAnchor.constraint(equalTo: partyImageButtonTwo.bottomAnchor, constant: 2),
             
+            // 파티 정보 버튼 3
+            partyImageButtonThree.topAnchor.constraint(equalTo: partyNameLabel.bottomAnchor, constant: 15),
+            partyImageButtonThree.leadingAnchor.constraint(equalTo: partyInfoTwo.trailingAnchor, constant: 20),
+            
+            // 파티 정보 레이블 3
+            partyInfoThree.centerXAnchor.constraint(equalTo: partyImageButtonThree.centerXAnchor),
+            partyInfoThree.topAnchor.constraint(equalTo: partyImageButtonThree.bottomAnchor, constant: 2),
+            
             // ----------- 구분선 -----------
             divider2.topAnchor.constraint(equalTo: partyInfoOne.bottomAnchor, constant: 20),
             divider2.leadingAnchor.constraint(equalTo: wantedPartyView.leadingAnchor, constant: 20),
@@ -355,17 +391,17 @@ class MyPageViewController: BaseViewController {
             calendarView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             calendarView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             calendarView.widthAnchor.constraint(equalTo: scrollView.widthAnchor), // 스크롤 뷰의 폭에 맞춤
-            calendarView.bottomAnchor.constraint(equalTo: calendarImageView.bottomAnchor, constant: 20),
+            calendarView.bottomAnchor.constraint(equalTo: calendarImageButton.bottomAnchor, constant: 20),
             
             // 캘린더 레이블
             calendarLabel.leadingAnchor.constraint(equalTo: calendarView.leadingAnchor, constant: 20),
             calendarLabel.topAnchor.constraint(equalTo: divider3.bottomAnchor, constant: 20),
             
             // 캘린더 이미지뷰
-            calendarImageView.leadingAnchor.constraint(equalTo: calendarView.leadingAnchor, constant: 20),
-            calendarImageView.topAnchor.constraint(equalTo: calendarLabel.bottomAnchor, constant: 20),
-            calendarImageView.widthAnchor.constraint(equalTo: calendarView.widthAnchor, multiplier: 0.9),
-            calendarImageView.heightAnchor.constraint(equalTo: calendarImageView.widthAnchor, multiplier: 1.3),
+            calendarImageButton.leadingAnchor.constraint(equalTo: calendarView.leadingAnchor, constant: 20),
+            calendarImageButton.topAnchor.constraint(equalTo: calendarLabel.bottomAnchor, constant: 20),
+            calendarImageButton.widthAnchor.constraint(equalTo: calendarView.widthAnchor, multiplier: 0.9),
+            calendarImageButton.heightAnchor.constraint(equalTo: calendarImageButton.widthAnchor, multiplier: 1.3),
             
             calendarView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor) // 스크롤되도록
         ])
@@ -381,4 +417,8 @@ class MyPageViewController: BaseViewController {
         // 현재 네비게이션 스택에서 이 뷰 컨트롤러를 제거하고 이전 화면으로 돌아갑니다.
         self.navigationController?.popViewController(animated: true)
     }
+}
+
+#Preview {
+    MyPageViewController()
 }

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		7709876B2C7DB7A90032726F /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7709876A2C7DB7A90032726F /* WriteViewController.swift */; };
 		7736C1B52C7D931A008FD5BD /* RecruitmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736C1B42C7D931A008FD5BD /* RecruitmentModel.swift */; };
+		970DAE642C7EE44A0090B1C5 /* MyPageCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970DAE632C7EE44A0090B1C5 /* MyPageCalendarViewController.swift */; };
+		970DAE662C7EE8920090B1C5 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970DAE652C7EE8920090B1C5 /* CommentViewController.swift */; };
+		970DAE682C7EEC5E0090B1C5 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970DAE672C7EEC5E0090B1C5 /* CommentCell.swift */; };
 		97F8FDB42C7DBCE70027A63E /* MyPageEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F8FDB32C7DBCE70027A63E /* MyPageEditViewController.swift */; };
 		BD0EE6892C7C7584000D503C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EE6882C7C7584000D503C /* AppDelegate.swift */; };
 		BD0EE68B2C7C7584000D503C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EE68A2C7C7584000D503C /* SceneDelegate.swift */; };
@@ -49,6 +52,9 @@
 /* Begin PBXFileReference section */
 		7709876A2C7DB7A90032726F /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		7736C1B42C7D931A008FD5BD /* RecruitmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentModel.swift; sourceTree = "<group>"; };
+		970DAE632C7EE44A0090B1C5 /* MyPageCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageCalendarViewController.swift; sourceTree = "<group>"; };
+		970DAE652C7EE8920090B1C5 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		970DAE672C7EEC5E0090B1C5 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		97F8FDB32C7DBCE70027A63E /* MyPageEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageEditViewController.swift; sourceTree = "<group>"; };
 		BD0EE6852C7C7584000D503C /* Team6_Movie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Team6_Movie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD0EE6882C7C7584000D503C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -200,6 +206,9 @@
 				BD0EE6E72C7D6BA0000D503C /* MyPageViewController.swift */,
 				BD2F52372C7EADFE00120DDB /* MyPagePostViewController.swift */,
 				97F8FDB32C7DBCE70027A63E /* MyPageEditViewController.swift */,
+				970DAE632C7EE44A0090B1C5 /* MyPageCalendarViewController.swift */,
+				970DAE652C7EE8920090B1C5 /* CommentViewController.swift */,
+				970DAE672C7EEC5E0090B1C5 /* CommentCell.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -327,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				970DAE662C7EE8920090B1C5 /* CommentViewController.swift in Sources */,
 				BD0EE6932C7C7584000D503C /* Team6_Movie.xcdatamodeld in Sources */,
 				7709876B2C7DB7A90032726F /* WriteViewController.swift in Sources */,
 				BD0EE6F92C7D97AE000D503C /* ContentCell.swift in Sources */,
@@ -348,6 +358,8 @@
 				97F8FDB42C7DBCE70027A63E /* MyPageEditViewController.swift in Sources */,
 				BD0EE6F72C7D970E000D503C /* ContentsView.swift in Sources */,
 				BD0EE6F12C7D6BCF000D503C /* Model.swift in Sources */,
+				970DAE642C7EE44A0090B1C5 /* MyPageCalendarViewController.swift in Sources */,
+				970DAE682C7EEC5E0090B1C5 /* CommentCell.swift in Sources */,
 				BD2F521A2C7DEFAF00120DDB /* UIViewController+Extension.swift in Sources */,
 				BD0EE68B2C7C7584000D503C /* SceneDelegate.swift in Sources */,
 				BD2F52342C7E0E6100120DDB /* UIStackView+Extension.swift in Sources */,
