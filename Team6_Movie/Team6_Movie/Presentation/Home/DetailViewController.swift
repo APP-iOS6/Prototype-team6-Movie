@@ -10,13 +10,14 @@ import UIKit
 class DetailViewController: BaseViewController {
     
     private var content: Contents?
+    private var isHeart = false
     
     // UI 요소들
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
-        imageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 230).isActive = true
         return imageView
     }()
     
@@ -44,10 +45,52 @@ class DetailViewController: BaseViewController {
         return descriptionLabel
     }()
     
+    private lazy var graphLabel: UILabel = {
+        let graphLabel = UILabel()
+        graphLabel.font = .regular16
+        graphLabel.textColor = .white
+        graphLabel.numberOfLines = 0
+        graphLabel.text = "모집 현황"
+        return graphLabel
+    }()
+    
+    private lazy var graphImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "graph")
+        imageView.layer.masksToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        return imageView
+    }()
+    
+    private lazy var likeButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "heart"), for: .normal)
+        button.tintColor = .white
+        button.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var commentButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "message"), for: .normal)
+        button.tintColor = .white
+        button.addTarget(self, action: #selector(commentButtonTapped), for: .touchUpInside)
+        return button
+    }()
+
+    private lazy var buttonStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [likeButton, commentButton])
+        stackView.axis = .horizontal
+        stackView.spacing = 13
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
     private lazy var applyButton: UIButton = UIButton.createButton(" 신청하기")
     
     private lazy var stackView: UIStackView = {
-       let stackView = UIStackView(arrangedSubviews: [imageView, titleLabel, dateLabel, descriptionLabel])
+        let stackView = UIStackView(arrangedSubviews: [imageView, titleLabel, dateLabel, descriptionLabel, graphLabel, graphImageView])
         stackView.axis = .vertical
         stackView.spacing = 16
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -58,7 +101,7 @@ class DetailViewController: BaseViewController {
         super.viewDidLoad()
         self.title = "상세 정보"
         applyButton.addTarget(self, action: #selector(applyButtonTapped), for: .touchUpInside)
-
+        
         setupUI()
         updateUI()
         setupNavigationBar()
@@ -75,6 +118,7 @@ class DetailViewController: BaseViewController {
     // MARK: - UI 설정
     override func setupUI() {
         view.addSubview(stackView)
+        view.addSubview(buttonStackView)
         view.addSubview(applyButton)
         
         NSLayoutConstraint.activate([
@@ -82,7 +126,13 @@ class DetailViewController: BaseViewController {
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
-    
+        
+        NSLayoutConstraint.activate([
+            buttonStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 2),
+            buttonStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            buttonStackView.bottomAnchor.constraint(equalTo: applyButton.topAnchor, constant: -16)
+        ])
+        
         NSLayoutConstraint.activate([
             applyButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             applyButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
@@ -122,11 +172,23 @@ class DetailViewController: BaseViewController {
         present(activityViewController, animated: true, completion: nil)
     }
     
+    @objc private func likeButtonTapped() {
+        isHeart.toggle()
+        let heartIcon = isHeart ? "heart.fill" : "heart"
+        likeButton.setImage(UIImage(systemName: heartIcon), for: .normal)
+    }
+    
+    @objc private func commentButtonTapped() {
+        // 댓글 뷰로 이동
+//        let nextvc = ...()
+//        navigationController?.pushViewController(nextvc, animated: true)
+    }
+    
     @objc private func applyButtonTapped() {
         let alert = UIAlertController(title: "신청하시겠습니까?", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "확인", style: .default, handler: { [weak self] _ in
-                self?.navigationController?.popViewController(animated: true)
+            self?.navigationController?.popViewController(animated: true)
         }))
         present(alert, animated: true, completion: nil)
     }
@@ -134,5 +196,4 @@ class DetailViewController: BaseViewController {
 //git add .
 //git commit -m "feat : 마이페이지 뷰"
 //git push origin Hyojeong
-
 
