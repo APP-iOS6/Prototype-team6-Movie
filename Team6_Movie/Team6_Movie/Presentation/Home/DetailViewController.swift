@@ -180,8 +180,8 @@ class DetailViewController: BaseViewController {
     
     @objc private func commentButtonTapped() {
         // 댓글 뷰로 이동
-//        let nextvc = ...()
-//        navigationController?.pushViewController(nextvc, animated: true)
+        let nextvc = CommentViewController()
+        navigationController?.pushViewController(nextvc, animated: true)
     }
     
     @objc private func applyButtonTapped() {
