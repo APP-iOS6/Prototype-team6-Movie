@@ -205,3 +205,7 @@ class MyPageEditViewController: BaseViewController, UIImagePickerControllerDeleg
         }
     }
 }
+
+#Preview {
+    MyPageEditViewController()
+}

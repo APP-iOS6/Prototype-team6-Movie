@@ -27,7 +27,7 @@ class MyPagePostViewController: BaseViewController {
     
     private lazy var firstLabel: UILabel = {
         let label = UILabel()
-        label.text = "첫 커뮤니티 이야기를 모두에게 들려주세요."
+        label.text = "아직 작성한 글이 없습니다."
         label.textColor = .systemGray4
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -68,9 +68,7 @@ class MyPagePostViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .mainColor()
-        
+                
         setupInterface()
         setupLayout()
         
@@ -181,7 +179,13 @@ extension MyPagePostViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 상세 정보로 네비게이션
+        let detailVC = DetailViewController()
+        detailVC.setContent(Contents(category: .Concert, location: "서울", image: UIImage(named: "concert7")))
+        self.navigationController?.pushViewController(detailVC, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
+}
+
+#Preview {
+    MyPagePostViewController()
 }
