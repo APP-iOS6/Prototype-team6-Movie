@@ -1,3 +1,5 @@
+<img src="https://github.com/user-attachments/assets/6d0c3c5a-b49d-4b4d-bf53-507f2c01ce29" width="250" height="250"/>
+
 # 모두의 씨네
 영화관에서 함께 웃고 떠들며 중요한 순간을 함께하고 싶은 사람들을 위한 앱 
 - 빠르게 영화관 응원방(대관한 영화관) 정보 확인
@@ -31,3 +33,6 @@
 
 # 라이선스
 Licensed under the [MIT](LICENSE) license.
+
+<img src="https://github.com/user-attachments/assets/127ac9ff-75ee-4e5e-8c60-65f4cf122732" width="250" height="250"/>
+
