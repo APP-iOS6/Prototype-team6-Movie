@@ -47,6 +47,8 @@
 		BD2F52342C7E0E6100120DDB /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2F52332C7E0E6100120DDB /* UIStackView+Extension.swift */; };
 		BD2F52362C7EA7F400120DDB /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2F52352C7EA7F400120DDB /* UIButton+Extension.swift */; };
 		BD2F52382C7EADFE00120DDB /* MyPagePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2F52372C7EADFE00120DDB /* MyPagePostViewController.swift */; };
+		BD2F523B2C7EE40D00120DDB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2F523A2C7EE40D00120DDB /* LoginViewController.swift */; };
+		BD2F523D2C7EEE5B00120DDB /* SlideshowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2F523C2C7EEE5B00120DDB /* SlideshowViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +94,8 @@
 		BD2F52332C7E0E6100120DDB /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		BD2F52352C7EA7F400120DDB /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		BD2F52372C7EADFE00120DDB /* MyPagePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPagePostViewController.swift; sourceTree = "<group>"; };
+		BD2F523A2C7EE40D00120DDB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BD2F523C2C7EEE5B00120DDB /* SlideshowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideshowViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,7 @@
 		BD0EE6DE2C7D64BC000D503C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				BD2F52392C7EE3F100120DDB /* Login */,
 				BD0EE6E32C7D64FD000D503C /* Recruitment */,
 				BD0EE6E22C7D64E8000D503C /* MyPage */,
 				BD0EE6E12C7D64DF000D503C /* Search */,
@@ -257,6 +262,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		BD2F52392C7EE3F100120DDB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				BD2F523A2C7EE40D00120DDB /* LoginViewController.swift */,
+				BD2F523C2C7EEE5B00120DDB /* SlideshowViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -337,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				970DAE662C7EE8920090B1C5 /* CommentViewController.swift in Sources */,
+				BD2F523B2C7EE40D00120DDB /* LoginViewController.swift in Sources */,
 				BD0EE6932C7C7584000D503C /* Team6_Movie.xcdatamodeld in Sources */,
 				7709876B2C7DB7A90032726F /* WriteViewController.swift in Sources */,
 				BD0EE6F92C7D97AE000D503C /* ContentCell.swift in Sources */,
@@ -355,6 +370,7 @@
 				BD0EE6ED2C7D6BBA000D503C /* HomeViewController.swift in Sources */,
 				BD0EE6F32C7D8E24000D503C /* Contents.swift in Sources */,
 				BD0EE6B02C7D5EE8000D503C /* UIFont+Extension.swift in Sources */,
+				BD2F523D2C7EEE5B00120DDB /* SlideshowViewController.swift in Sources */,
 				97F8FDB42C7DBCE70027A63E /* MyPageEditViewController.swift in Sources */,
 				BD0EE6F72C7D970E000D503C /* ContentsView.swift in Sources */,
 				BD0EE6F12C7D6BCF000D503C /* Model.swift in Sources */,

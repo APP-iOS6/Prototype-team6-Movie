@@ -355,5 +355,3 @@ class WriteViewController: BaseViewController, UINavigationControllerDelegate, U
 #Preview {
     WriteViewController()
 }
-
-
