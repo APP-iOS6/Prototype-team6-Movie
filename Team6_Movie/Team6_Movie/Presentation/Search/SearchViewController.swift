@@ -61,12 +61,13 @@ class SearchViewController: BaseViewController, UITableViewDataSource, UITableVi
     
     private lazy var kboButton: UIButton = {
         let button = UIButton()
-        button.setTitle("스포츠", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 25)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
+        button.setImage(UIImage(named: "KBO2"), for: .normal)
+//        button.setTitle("KBO", for: .normal)
+//        button.titleLabel?.font = .systemFont(ofSize: 25)
+//        button.setTitleColor(.white, for: .normal)
+//        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
         button.backgroundColor = .darkGray
-        button.layer.cornerRadius = 8
+        button.layer.cornerRadius = 11
         button.translatesAutoresizingMaskIntoConstraints = false
         
         button.addAction(UIAction { [weak self] _ in
@@ -79,12 +80,13 @@ class SearchViewController: BaseViewController, UITableViewDataSource, UITableVi
     
     private lazy var movieButton: UIButton = {
         let button = UIButton()
-        button.setTitle("영화", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 25)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
+        button.setImage(UIImage(named: "Movie"), for: .normal)
+//        button.setTitle("영화", for: .normal)
+//        button.titleLabel?.font = .systemFont(ofSize: 25)
+//        button.setTitleColor(.white, for: .normal)
+//        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
         button.backgroundColor = .darkGray
-        button.layer.cornerRadius = 8
+        button.layer.cornerRadius = 11
         button.translatesAutoresizingMaskIntoConstraints = false
         
         button.addAction(UIAction { [weak self] _ in
@@ -97,12 +99,13 @@ class SearchViewController: BaseViewController, UITableViewDataSource, UITableVi
     
     private lazy var concertButton: UIButton = {
         let button = UIButton()
-        button.setTitle("콘서트", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 25)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
+        button.setImage(UIImage(named: "Concert"), for: .normal)
+//        button.setTitle("콘서트", for: .normal)
+//        button.titleLabel?.font = .systemFont(ofSize: 25)
+//        button.setTitleColor(.white, for: .normal)
+//        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
         button.backgroundColor = .darkGray
-        button.layer.cornerRadius = 8
+        button.layer.cornerRadius = 11
         button.translatesAutoresizingMaskIntoConstraints = false
         
         button.addAction(UIAction { [weak self] _ in
@@ -115,12 +118,13 @@ class SearchViewController: BaseViewController, UITableViewDataSource, UITableVi
     
     private lazy var animationButton: UIButton = {
         let button = UIButton()
-        button.setTitle("애니메이션", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 25)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
+        button.setImage(UIImage(named: "Animation"), for: .normal)
+//        button.setTitle("애니메이션", for: .normal)
+//        button.titleLabel?.font = .systemFont(ofSize: 25)
+//        button.setTitleColor(.white, for: .normal)
+//        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
         button.backgroundColor = .darkGray
-        button.layer.cornerRadius = 8
+        button.layer.cornerRadius = 11
         button.translatesAutoresizingMaskIntoConstraints = false
         
         button.addAction(UIAction { [weak self] _ in
@@ -133,12 +137,13 @@ class SearchViewController: BaseViewController, UITableViewDataSource, UITableVi
     
     private lazy var sportButton: UIButton = {
         let button = UIButton()
-        button.setTitle("스포츠", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 25)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
+        button.setImage(UIImage(named: "Sport"), for: .normal)
+//        button.setTitle("스포츠", for: .normal)
+//        button.titleLabel?.font = .systemFont(ofSize: 25)
+//        button.setTitleColor(.white, for: .normal)
+//        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
         button.backgroundColor = .darkGray
-        button.layer.cornerRadius = 8
+        button.layer.cornerRadius = 11
         button.translatesAutoresizingMaskIntoConstraints = false
         
         button.addAction(UIAction { [weak self] _ in
@@ -151,12 +156,13 @@ class SearchViewController: BaseViewController, UITableViewDataSource, UITableVi
     
     private lazy var etcButton: UIButton = {
         let button = UIButton()
-        button.setTitle("기타", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 25)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
+        button.setImage(UIImage(named: "etc"), for: .normal)
+//        button.setTitle("기타", for: .normal)
+//        button.titleLabel?.font = .systemFont(ofSize: 25)
+//        button.setTitleColor(.white, for: .normal)
+//        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
         button.backgroundColor = .darkGray
-        button.layer.cornerRadius = 8
+        button.layer.cornerRadius = 11
         button.translatesAutoresizingMaskIntoConstraints = false
         
         button.addAction(UIAction { [weak self] _ in
@@ -247,9 +253,9 @@ class SearchViewController: BaseViewController, UITableViewDataSource, UITableVi
         view.addSubview(vStackView)
 
         vStackView.addArrangedSubviews(hStackViewFirst,hStackViewSecond, hStackViewThird)
-        hStackViewFirst.addArrangedSubviews(kboButton, movieButton)
+        hStackViewFirst.addArrangedSubviews(sportButton, movieButton)
         hStackViewSecond.addArrangedSubviews(concertButton, animationButton)
-        hStackViewThird.addArrangedSubviews(sportButton,etcButton)
+        hStackViewThird.addArrangedSubviews(kboButton, etcButton)
         
     }
     
@@ -460,6 +466,8 @@ class RecentSearchCell: UITableViewCell {
     }
 }
 
-
+#Preview {
+    SearchViewController()
+}
 
 
