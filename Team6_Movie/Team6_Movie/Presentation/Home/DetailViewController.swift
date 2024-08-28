@@ -44,22 +44,7 @@ class DetailViewController: BaseViewController {
         return descriptionLabel
     }()
     
-    private lazy var applyButton: UIButton = {
-        let applyButton = UIButton()
-        if let buttonImage = UIImage(named: "popcorn") {
-            let resizedImage = buttonImage.resized(toWidth: 30) // 이미지의 너비를 24로 조정
-            applyButton.setImage(resizedImage!.withRenderingMode(.alwaysOriginal), for: .normal)
-        }
-        applyButton.setTitle(" 신청하기", for: .normal)
-        applyButton.setTitleColor(.black, for: .normal) // 텍스트 색상을 검정색으로 설정
-        applyButton.titleLabel?.font = .bold20
-        applyButton.backgroundColor = .gray
-        applyButton.tintColor = .black
-        applyButton.layer.cornerRadius = 10
-        applyButton.translatesAutoresizingMaskIntoConstraints = false
-        applyButton.addTarget(self, action: #selector(applyButtonTapped), for: .touchUpInside)
-        return applyButton
-    }()
+    private lazy var applyButton: UIButton = UIButton.createButton(" 신청하기")
     
     private lazy var stackView: UIStackView = {
        let stackView = UIStackView(arrangedSubviews: [imageView, titleLabel, dateLabel, descriptionLabel])
@@ -72,6 +57,8 @@ class DetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "상세 정보"
+        applyButton.addTarget(self, action: #selector(applyButtonTapped), for: .touchUpInside)
+
         setupUI()
         updateUI()
         setupNavigationBar()

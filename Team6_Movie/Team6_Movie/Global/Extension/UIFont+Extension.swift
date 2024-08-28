@@ -12,7 +12,7 @@ extension UIFont {
     static var bold24 = UIFont(name: "Pretendard-Bold", size: 24) ?? UIFont.systemFont(ofSize: 24, weight: .bold)
     static var bold20 = UIFont(name: "Pretendard-Bold", size: 20) ?? UIFont.systemFont(ofSize: 20, weight: .bold)
     static var bold16 = UIFont(name: "Pretendard-Bold", size: 16) ?? UIFont.systemFont(ofSize: 16, weight: .bold)
-
+    
     static var semibold24 = UIFont(name: "Pretendard-SemiBold", size: 24) ?? UIFont.systemFont(ofSize: 24, weight: .semibold)
     static var semibold20 = UIFont(name: "Pretendard-SemiBold", size: 20) ?? UIFont.systemFont(ofSize: 20, weight: .semibold)
     static var semibold16 = UIFont(name: "Pretendard-SemiBold", size: 16) ?? UIFont.systemFont(ofSize: 16, weight: .semibold)

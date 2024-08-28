@@ -42,6 +42,7 @@
 		BD2F522D2C7E047E00120DDB /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD2F52242C7E047E00120DDB /* Pretendard-Medium.otf */; };
 		BD2F52322C7E0A6300120DDB /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2F52312C7E0A6300120DDB /* UIImage+Extension.swift */; };
 		BD2F52342C7E0E6100120DDB /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2F52332C7E0E6100120DDB /* UIStackView+Extension.swift */; };
+		BD2F52362C7EA7F400120DDB /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2F52352C7EA7F400120DDB /* UIButton+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		BD2F52242C7E047E00120DDB /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		BD2F52312C7E0A6300120DDB /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		BD2F52332C7E0E6100120DDB /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
+		BD2F52352C7EA7F400120DDB /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				BD2F52192C7DEFAF00120DDB /* UIViewController+Extension.swift */,
 				BD2F52312C7E0A6300120DDB /* UIImage+Extension.swift */,
 				BD2F52332C7E0E6100120DDB /* UIStackView+Extension.swift */,
+				BD2F52352C7EA7F400120DDB /* UIButton+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				BD0EE6EB2C7D6BB2000D503C /* SearchViewController.swift in Sources */,
 				BD0EE6E82C7D6BA0000D503C /* MyPageViewController.swift in Sources */,
 				BD0EE7022C7DBCD3000D503C /* CategoryContentsViewController.swift in Sources */,
+				BD2F52362C7EA7F400120DDB /* UIButton+Extension.swift in Sources */,
 				BD2F52172C7DD55800120DDB /* DetailViewController.swift in Sources */,
 				7736C1B52C7D931A008FD5BD /* RecruitmentModel.swift in Sources */,
 				BD2F52322C7E0A6300120DDB /* UIImage+Extension.swift in Sources */,
@@ -414,7 +418,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -471,7 +475,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

@@ -181,21 +181,13 @@ class WriteViewController: UIViewController, UINavigationControllerDelegate, UIT
     }()
     
     //모집하기 버튼
-    private let submitButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setTitle("모집하기", for: .normal)
-        button.titleLabel?.font = UIFont.bold20
-        button.backgroundColor = .darkGray
-        button.setTitleColor(.white, for: .normal)
-        button.layer.cornerRadius = 8
-        button.addTarget(self, action: #selector(submitButtonTapped), for: .touchUpInside)
-        return button
-    }()
+    private lazy var submitButton: UIButton = UIButton.createButton("모집하기")
     
     //뷰 로드
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .mainColor()
+        submitButton.addTarget(self, action: #selector(submitButtonTapped), for: .touchUpInside)
         setupLayout()
         setupDatePicker()
         setupButtons()
@@ -332,7 +324,12 @@ class WriteViewController: UIViewController, UINavigationControllerDelegate, UIT
     
     //모집하기 버튼 클릭 시
     @objc private func submitButtonTapped() {
-        print("모집하기 버튼 click 됨")
+        let alert = UIAlertController(title: "신청하시겠습니까?", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "확인", style: .default, handler: { [weak self] _ in
+            self?.navigationController?.popViewController(animated: true)
+        }))
+        present(alert, animated: true, completion: nil)
     }
     
     // 날짜/시간 선택할 수 있는 데이트피커

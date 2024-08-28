@@ -1,7 +1,7 @@
 import UIKit
 
 
-class RecruitmentViewController: UIViewController {
+class RecruitmentViewController: BaseViewController {
     
     let tableView = UITableView(frame: .zero, style: .plain)
     let writeButton = UIButton(type: .system)
@@ -10,12 +10,6 @@ class RecruitmentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //정원님 코드 가져오기...감사합니다..
-        let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = .mainColor()
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.standardAppearance = appearance
-        navigationController?.navigationBar.scrollEdgeAppearance = appearance
         self.title = "모집"
         
         view.backgroundColor = UIColor.darkGray
@@ -115,6 +109,9 @@ extension RecruitmentViewController: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let nextvc = DetailViewController()
+        nextvc.setContent(Contents(category: .Concert, location: "서울", image: UIImage(named: "concert7")))
+        navigationController?.pushViewController(nextvc, animated: true)
     }
     
     
