@@ -24,7 +24,7 @@ let partys = [
 """),
  
  Party(imageFileName: "image-19",
-       mainText: "KBO리그 LG트윈스 VS NC 다이노스",
+       mainText: "KBO LG트윈스 VS NC다이노스",
        subText: """
 일정 : 2024년 6월 30일 17:00
 장소 : 롯네시네마 건대
@@ -84,3 +84,5 @@ let partys = [
 
 
 ]
+
+let buttonCategory = ["KBO", "콘서트", "영화", "스포츠", "기타"]

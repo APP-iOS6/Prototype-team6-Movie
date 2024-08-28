@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7709876B2C7DB7A90032726F /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7709876A2C7DB7A90032726F /* WriteViewController.swift */; };
 		7736C1B52C7D931A008FD5BD /* RecruitmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736C1B42C7D931A008FD5BD /* RecruitmentModel.swift */; };
 		97F8FDB42C7DBCE70027A63E /* MyPageEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F8FDB32C7DBCE70027A63E /* MyPageEditViewController.swift */; };
 		BD0EE6892C7C7584000D503C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0EE6882C7C7584000D503C /* AppDelegate.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7709876A2C7DB7A90032726F /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		7736C1B42C7D931A008FD5BD /* RecruitmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitmentModel.swift; sourceTree = "<group>"; };
 		97F8FDB32C7DBCE70027A63E /* MyPageEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageEditViewController.swift; sourceTree = "<group>"; };
 		BD0EE6852C7C7584000D503C /* Team6_Movie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Team6_Movie.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,6 +203,7 @@
 			children = (
 				BD0EE6E52C7D6B92000D503C /* RecruitmentViewController.swift */,
 				7736C1B42C7D931A008FD5BD /* RecruitmentModel.swift */,
+				7709876A2C7DB7A90032726F /* WriteViewController.swift */,
 			);
 			path = Recruitment;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD0EE6932C7C7584000D503C /* Team6_Movie.xcdatamodeld in Sources */,
+				7709876B2C7DB7A90032726F /* WriteViewController.swift in Sources */,
 				BD0EE6F92C7D97AE000D503C /* ContentCell.swift in Sources */,
 				BD0EE6F52C7D8FBC000D503C /* Date+Extension.swift in Sources */,
 				BD0EE7042C7DC0F6000D503C /* CategoryViewCell.swift in Sources */,
