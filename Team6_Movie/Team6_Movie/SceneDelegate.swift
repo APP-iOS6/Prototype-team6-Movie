@@ -15,6 +15,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
+        let loginVC = LoginViewController()
+        
         let recruitmentViewController = RecruitmentViewController()
         let myPageViewController = MyPageViewController()
         let searchViewController = SearchViewController()
@@ -52,7 +54,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // 5. 윈도우를 생성하고 루트 뷰 컨트롤러로 설정합니다.
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = tabBarController
+        window?.rootViewController = loginVC
         window?.makeKeyAndVisible()
     }
 
