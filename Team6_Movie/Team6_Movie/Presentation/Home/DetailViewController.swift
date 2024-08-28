@@ -16,7 +16,7 @@ class DetailViewController: BaseViewController {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
-        imageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 250).isActive = true
         return imageView
     }()
     
@@ -44,10 +44,28 @@ class DetailViewController: BaseViewController {
         return descriptionLabel
     }()
     
+    private lazy var graphLabel: UILabel = {
+        let graphLabel = UILabel()
+        graphLabel.font = .regular16
+        graphLabel.textColor = .white
+        graphLabel.numberOfLines = 0
+        graphLabel.text = "모집 현황"
+        return graphLabel
+    }()
+    
+    private lazy var graphImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "graph")
+        imageView.layer.masksToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+        return imageView
+    }()
+    
     private lazy var applyButton: UIButton = UIButton.createButton(" 신청하기")
     
     private lazy var stackView: UIStackView = {
-       let stackView = UIStackView(arrangedSubviews: [imageView, titleLabel, dateLabel, descriptionLabel])
+       let stackView = UIStackView(arrangedSubviews: [imageView, titleLabel, dateLabel, descriptionLabel, graphLabel, graphImageView])
         stackView.axis = .vertical
         stackView.spacing = 16
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -134,5 +152,4 @@ class DetailViewController: BaseViewController {
 //git add .
 //git commit -m "feat : 마이페이지 뷰"
 //git push origin Hyojeong
-
 
