@@ -49,6 +49,7 @@ class MyPageCalendarViewController: BaseViewController {
         button.addAction(UIAction(handler: { [weak self] _ in
             let detailVC = DetailViewController()
             detailVC.setContent(Contents(category: .Concert, location: "서울", image: UIImage(named: "concert7")))
+            detailVC.isApply = true
             self?.navigationController?.pushViewController(detailVC, animated: true)
         }), for: .touchUpInside)
         
@@ -63,6 +64,7 @@ class MyPageCalendarViewController: BaseViewController {
         button.addAction(UIAction(handler: { [weak self] _ in
             let detailVC = DetailViewController()
             detailVC.setContent(Contents(category: .Movie, location: "서울", image: UIImage(named: "animation12")))
+            detailVC.isApply = true
             self?.navigationController?.pushViewController(detailVC, animated: true)        }), for: .touchUpInside)
         
         return button
@@ -76,6 +78,7 @@ class MyPageCalendarViewController: BaseViewController {
         button.addAction(UIAction(handler: { [weak self] _ in
             let detailVC = DetailViewController()
             detailVC.setContent(Contents(category: .Movie, location: "서울", image: UIImage(named: "animation3")))
+            detailVC.isApply = true
             self?.navigationController?.pushViewController(detailVC, animated: true)        }), for: .touchUpInside)
         
         return button

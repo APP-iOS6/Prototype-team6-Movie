@@ -11,7 +11,7 @@ class DetailViewController: BaseViewController {
     
     private var content: Contents?
     private var isHeart = false
-    
+    var isApply = false
     // UI 요소들
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
@@ -82,12 +82,12 @@ class DetailViewController: BaseViewController {
     private lazy var buttonStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [likeButton, commentButton])
         stackView.axis = .horizontal
-        stackView.spacing = 13
+        stackView.distribution = .fillEqually
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     
-    private lazy var applyButton: UIButton = UIButton.createButton(" 신청하기")
+    private lazy var applyButton: UIButton = UIButton.createButton(!isApply ? " 신청하기" : " 신청취소")
     
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [imageView, titleLabel, dateLabel, descriptionLabel, graphLabel, graphImageView])
@@ -128,8 +128,8 @@ class DetailViewController: BaseViewController {
         ])
         
         NSLayoutConstraint.activate([
-            buttonStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 2),
-            buttonStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            buttonStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            buttonStackView.widthAnchor.constraint(equalToConstant: 80),
             buttonStackView.bottomAnchor.constraint(equalTo: applyButton.topAnchor, constant: -16)
         ])
         
@@ -193,7 +193,4 @@ class DetailViewController: BaseViewController {
         present(alert, animated: true, completion: nil)
     }
 }
-//git add .
-//git commit -m "feat : 마이페이지 뷰"
-//git push origin Hyojeong
 

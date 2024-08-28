@@ -107,6 +107,7 @@ class MyPageViewController: BaseViewController {
         button.addAction(UIAction(handler: { [weak self] _ in
             let detailVC = DetailViewController()
             detailVC.setContent(Contents(category: .Concert, location: "서울", image: UIImage(named: "concert7")))
+            detailVC.isApply = true
             self?.navigationController?.pushViewController(detailVC, animated: true)
         }), for: .touchUpInside)
         
@@ -121,6 +122,8 @@ class MyPageViewController: BaseViewController {
         button.addAction(UIAction(handler: { [weak self] _ in
             let detailVC = DetailViewController()
             detailVC.setContent(Contents(category: .Movie, location: "서울", image: UIImage(named: "animation12")))
+            detailVC.isApply = true
+
             self?.navigationController?.pushViewController(detailVC, animated: true)        }), for: .touchUpInside)
         
         return button
@@ -134,6 +137,8 @@ class MyPageViewController: BaseViewController {
         button.addAction(UIAction(handler: { [weak self] _ in
             let detailVC = DetailViewController()
             detailVC.setContent(Contents(category: .Movie, location: "서울", image: UIImage(named: "animation3")))
+            detailVC.isApply = true
+
             self?.navigationController?.pushViewController(detailVC, animated: true)        }), for: .touchUpInside)
         
         return button
@@ -173,6 +178,22 @@ class MyPageViewController: BaseViewController {
         label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    
+    private lazy var likeButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        button.setTitle("  좋아요 한 게시글", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.tintColor = .white
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addAction(UIAction(handler: { _ in
+            let viewController = CategoryContentsViewController()
+            viewController.setCategory(.Movie)
+            viewController.title = ""
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }), for: .touchUpInside)
+        return button
     }()
     
     private lazy var communityButton: UIButton = {
@@ -268,6 +289,7 @@ class MyPageViewController: BaseViewController {
         wantedPartyView.addSubview(divider2)
         
         comminityView.addSubview(communityLabel)
+        comminityView.addSubview(likeButton)
         comminityView.addSubview(communityButton)
         comminityView.addSubview(divider3)
         
@@ -377,11 +399,15 @@ class MyPageViewController: BaseViewController {
             communityLabel.topAnchor.constraint(equalTo: divider2.topAnchor, constant: 20),
             
             // 커뮤니티 버튼
+            
             communityButton.leadingAnchor.constraint(equalTo: comminityView.leadingAnchor, constant: 20),
             communityButton.topAnchor.constraint(equalTo: communityLabel.bottomAnchor, constant: 20),
             
+            likeButton.leadingAnchor.constraint(equalTo: communityButton.leadingAnchor),
+            likeButton.topAnchor.constraint(equalTo: communityButton.bottomAnchor, constant: 20),
+            
             // ----------- 구분선 -----------
-            divider3.topAnchor.constraint(equalTo: communityButton.bottomAnchor, constant: 20),
+            divider3.topAnchor.constraint(equalTo: likeButton.bottomAnchor, constant: 20),
             divider3.leadingAnchor.constraint(equalTo: comminityView.leadingAnchor, constant: 20),
             divider3.trailingAnchor.constraint(equalTo: comminityView.trailingAnchor, constant: -20),
             divider3.heightAnchor.constraint(equalToConstant: 0.3),
