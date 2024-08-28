@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+class SearchViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 
     private var recentSearches: [(image: UIImage?, title: String, subtitle: String)] = [
         (UIImage(named: "image 28"), "임영웅 콘서트", "콘서트"),
@@ -237,31 +237,20 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         super.viewDidLoad()
         
         title = "검색"
-        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-        
         setupSearchBar()
-        
         setupButtonInterface()
         setupButtonLayout()
-        view.backgroundColor = .mainColor()
     }
     
     
     func setupButtonInterface() {
         view.addSubview(vStackView)
 
-        vStackView.addArrangedSubview(hStackViewFirst)
-        vStackView.addArrangedSubview(hStackViewSecond)
-        vStackView.addArrangedSubview(hStackViewThird)
+        vStackView.addArrangedSubviews(hStackViewFirst,hStackViewSecond, hStackViewThird)
+        hStackViewFirst.addArrangedSubviews(kboButton, movieButton)
+        hStackViewSecond.addArrangedSubviews(concertButton, animationButton)
+        hStackViewThird.addArrangedSubviews(sportButton,etcButton)
         
-        hStackViewFirst.addArrangedSubview(kboButton)
-        hStackViewFirst.addArrangedSubview(movieButton)
-        
-        hStackViewSecond.addArrangedSubview(concertButton)
-        hStackViewSecond.addArrangedSubview(animationButton)
-        
-        hStackViewThird.addArrangedSubview(sportButton)
-        hStackViewThird.addArrangedSubview(etcButton)
     }
     
     func setupButtonLayout() {

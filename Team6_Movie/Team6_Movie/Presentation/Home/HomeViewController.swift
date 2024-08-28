@@ -12,19 +12,14 @@ class HomeViewController: BaseViewController {
         
         view.backgroundColor = .mainColor()
         self.title = "홈"
-        
-        // 네비게이션 타이틀에 이미지 설정
+    
         let imageView = UIImageView(image: UIImage(named: "icon"))
         imageView.contentMode = .scaleAspectFit
         navigationItem.titleView = imageView
         
-        // 네비게이션 바 스타일 설정
-        
-        
         setupScrollView()
         setupStackView()
         
-        // 콘텐츠 뷰 추가
         let kboView = ContentsView(contents: kboContents)
         let movieView = ContentsView(contents: movieContents)
         let concertView = ContentsView(contents: concertContents)
@@ -37,10 +32,8 @@ class HomeViewController: BaseViewController {
                 self?.showCategoryViewController(for: category)
             }
         }
+        stackView.addArrangedSubviews(kboView, movieView, concertView)
         
-        stackView.addArrangedSubview(kboView)
-        stackView.addArrangedSubview(movieView)
-        stackView.addArrangedSubview(concertView)
     }
     
     private func showCategoryViewController(for category: ContentCategory) {

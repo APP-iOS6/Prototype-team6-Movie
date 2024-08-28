@@ -40,6 +40,7 @@
 		BD2F522C2C7E047E00120DDB /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD2F52232C7E047E00120DDB /* Pretendard-Bold.otf */; };
 		BD2F522D2C7E047E00120DDB /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BD2F52242C7E047E00120DDB /* Pretendard-Medium.otf */; };
 		BD2F52322C7E0A6300120DDB /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2F52312C7E0A6300120DDB /* UIImage+Extension.swift */; };
+		BD2F52342C7E0E6100120DDB /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2F52332C7E0E6100120DDB /* UIStackView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		BD2F52232C7E047E00120DDB /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		BD2F52242C7E047E00120DDB /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		BD2F52312C7E0A6300120DDB /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		BD2F52332C7E0E6100120DDB /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				BD0EE6FA2C7DA4C1000D503C /* UIColor+Extension.swift */,
 				BD2F52192C7DEFAF00120DDB /* UIViewController+Extension.swift */,
 				BD2F52312C7E0A6300120DDB /* UIImage+Extension.swift */,
+				BD2F52332C7E0E6100120DDB /* UIStackView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				BD0EE6F12C7D6BCF000D503C /* Model.swift in Sources */,
 				BD2F521A2C7DEFAF00120DDB /* UIViewController+Extension.swift in Sources */,
 				BD0EE68B2C7C7584000D503C /* SceneDelegate.swift in Sources */,
+				BD2F52342C7E0E6100120DDB /* UIStackView+Extension.swift in Sources */,
 				BD0EE6E62C7D6B92000D503C /* RecruitmentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
