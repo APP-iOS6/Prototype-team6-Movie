@@ -39,8 +39,10 @@
   - 상세정보 화면 : [콘텐츠 세부 정보, ‘신청하기’, ‘공유하기’, 모집 현황(성별, 연령별), 좋아요, 댓글 기능] <br/>
   
   ![Simulator Screen Recording - iPhone 15 Pro - 2024-08-29 at 14 31 05](https://github.com/user-attachments/assets/dd8bf6ea-37bd-409f-a9fa-d7291b2a5a2a)
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   ![Simulator Screen Recording - iPhone 15 Pro - 2024-08-29 at 14 36 40](https://github.com/user-attachments/assets/4d96c197-3ed7-4ee3-a54d-65d13606eb33)
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ![Simulator Screen Recording - iPhone 15 Pro - 2024-08-29 at 14 58 58](https://github.com/user-attachments/assets/d7734528-3c20-4f27-96e4-0f944c24f893)
 <br/>
 
 
