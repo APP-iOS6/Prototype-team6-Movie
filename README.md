@@ -42,7 +42,8 @@
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   ![Simulator Screen Recording - iPhone 15 Pro - 2024-08-29 at 14 36 40](https://github.com/user-attachments/assets/4d96c197-3ed7-4ee3-a54d-65d13606eb33)
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  ![Simulator Screen Recording - iPhone 15 Pro - 2024-08-29 at 14 58 58](https://github.com/user-attachments/assets/d7734528-3c20-4f27-96e4-0f944c24f893)
+  ![Simulator Screen Recording - iPhone 15 Pro - 2024-08-28 at 17 08 13](https://github.com/user-attachments/assets/8dd601d6-afab-49d5-ab0e-f7dbb0282975)
+
 <br/>
 
 
