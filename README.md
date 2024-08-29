@@ -52,7 +52,7 @@
   - 주요 콘텐츠 카테고리 터치 시, 해당 콘텐츠 리스트 제공
   - 검색창 터치 시, ‘최근 검색기록’과 ‘검색기록 지우기’ 기능 제공 <br/>
   
-  ![Simulator Screen Recording - iPhone 15 Pro - 2024-08-29 at 14 42 52](https://github.com/user-attachments/assets/c2d64c00-5527-4365-8832-e9b8540a8851)
+  ![Simulator Screen Recording - iPhone 15 Pro - 2024-08-29 at 15 29 31](https://github.com/user-attachments/assets/7deb0a08-2558-4ed7-92d0-558fb3dcaf9f)
 <br/>
 
      
