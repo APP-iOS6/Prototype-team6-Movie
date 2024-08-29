@@ -31,7 +31,7 @@ let partys = [
 모집 인원 : 50명
 """),
  
- Party(imageFileName: "image-16",
+ Party(imageFileName: "image-26",
        mainText: "선재업고튀어 마지막화",
        subText: """
 일정 : 2024년 7월 10일 20:00

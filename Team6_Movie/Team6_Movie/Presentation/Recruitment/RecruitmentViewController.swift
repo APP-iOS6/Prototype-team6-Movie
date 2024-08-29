@@ -26,7 +26,7 @@ class RecruitmentViewController: BaseViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         
-        let writeButton = UIBarButtonItem(title: "+ 글쓰기", style: .plain, target: self, action: #selector(writeButtonAction))
+        let writeButton = UIBarButtonItem(title: "+ 모집하기", style: .plain, target: self, action: #selector(writeButtonAction))
         writeButton.tintColor = .white
         navigationItem.rightBarButtonItem = writeButton
         
