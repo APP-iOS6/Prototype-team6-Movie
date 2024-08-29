@@ -125,17 +125,32 @@
   
 <br/>
 
+## 폴더링 
+```markdown
+📦 Team6_Movie
+┣ 📂 Team6_Movie
+┃ ┣ 📜 AppDelegate.swift
+┃ ┣ 📜 SceneDelegate.swift
+┃
+┣ 📂 Model
+┃
+┣ 📂 Presentation
+┃ ┣ 📂 Login
+┃ ┣ 📂 Recruitment
+┃ ┣ 📂 MyPage
+┃ ┣ 📂 Search
+┃ ┣ 📂 Home
+┃ ┃ ┣ 📂 Cell
+┣ 📂 Base
+┃
+┣ 📂 Global
+┃ ┣ 📂 Fonts
+┃ ┣ 📂 Extension
+```
+
 ## ✅ 작동환경 💻
 - Xcode: 14.0
 - iOS: 15.0
-
-<br/><br/>
-
-## ✅ 개발자 🛠️
-- 김승철
-- 김수민
-- 김정원
-- 김효정
 
 <br/><br/>
 
