@@ -85,7 +85,7 @@ class SlideshowViewController: UIViewController {
     }
     
     private func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(moveToNextPage), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(moveToNextPage), userInfo: nil, repeats: true)
     }
     
     @objc private func moveToNextPage() {

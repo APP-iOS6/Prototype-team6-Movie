@@ -13,12 +13,12 @@ class ContentsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     private let collectionView: UICollectionView
     private let contents: [Contents]
     private let widthSize = 98
-    private let heightSize = 150
+    private let heightSize = 180
     private let titleButton = UIButton(type: .system)
     var onItemSelected: ((Contents) -> Void)?
     var onTitleButtonTapped: ((ContentCategory) -> Void)?
-
-   
+    
+    
     init(contents: [Contents]) {
         self.contents = contents
         
@@ -40,13 +40,26 @@ class ContentsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     }
     
     private func setupTitleButton(title: String) {
-        titleButton.setTitle("\(title) >", for: .normal)
+        titleButton.setTitle(title, for: .normal)
         titleButton.titleLabel?.font = .bold24
         titleButton.setTitleColor(.white, for: .normal)
         titleButton.contentHorizontalAlignment = .left
         titleButton.translatesAutoresizingMaskIntoConstraints = false
         addSubview(titleButton)
+        
+        // 오른쪽 화살표 이미지가 있는 UIButton 추가
+        let arrowButton = UIButton(type: .system)
+        arrowButton.setImage(UIImage(systemName: "chevron.right"), for: .normal)
+        arrowButton.tintColor = .white
+        arrowButton.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(arrowButton)
+        
         // UIButton 클릭 시 클로저 호출
+        arrowButton.addAction(UIAction(handler: { [weak self] _ in
+            guard let self = self else { return }
+            self.onTitleButtonTapped?(self.contents[0].category)
+        }), for: .touchUpInside)
+        
         titleButton.addAction(UIAction(handler: { [weak self] _ in
             guard let self = self else { return }
             self.onTitleButtonTapped?(self.contents[0].category)
@@ -55,7 +68,12 @@ class ContentsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
         NSLayoutConstraint.activate([
             titleButton.topAnchor.constraint(equalTo: topAnchor),
             titleButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            titleButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+            titleButton.trailingAnchor.constraint(equalTo: arrowButton.leadingAnchor, constant: -8),
+            
+            arrowButton.centerYAnchor.constraint(equalTo: titleButton.centerYAnchor),
+            arrowButton.trailingAnchor.constraint(equalTo: titleButton.trailingAnchor, constant: -10),
+            arrowButton.widthAnchor.constraint(equalToConstant: 12),
+            arrowButton.heightAnchor.constraint(equalToConstant: 18)
         ])
     }
     
@@ -67,11 +85,11 @@ class ContentsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
         addSubview(collectionView)
         
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: titleButton.bottomAnchor, constant: 3),
-            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            collectionView.topAnchor.constraint(equalTo: titleButton.bottomAnchor, constant: 0),
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            collectionView.heightAnchor.constraint(equalToConstant: 200)
+            collectionView.heightAnchor.constraint(equalToConstant: 180)
         ])
     }
     
