@@ -27,23 +27,38 @@
 - 영화관 '응원 상영' 콘텐츠 정보를 한 곳에 모아 보여줌
   - KBO, 영화, 콘서트, 애니메이션, 스포츠, 기타(드라마 등)
   - 스포츠, 영화, 콘서트 등 카테고리를 터치하면 해당 콘텐츠 리스트 제공
-- 보고싶은 콘텐츠 터치 시, '상세 정보' 및 '신청하기', '공유하기 기능 제공
-  - 상세정보 화면 : [콘텐츠 세부 정보, ‘신청하기’, ‘공유하기’, 모집 현황(성별, 연령별), 좋아요, 댓글 기능]
+  - 보고싶은 콘텐츠 터치 시, '상세 정보' 및 '신청하기', '공유하기 기능 제공
+  - 상세정보 화면 : [콘텐츠 세부 정보, ‘신청하기’, ‘공유하기’, 모집 현황(성별, 연령별), 좋아요, 댓글 기능] <br/>
+  
+  ![Simulator Screen Recording - iPhone 15 Pro - 2024-08-29 at 14 31 05](https://github.com/user-attachments/assets/dd8bf6ea-37bd-409f-a9fa-d7291b2a5a2a)
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  ![Simulator Screen Recording - iPhone 15 Pro - 2024-08-29 at 14 36 40](https://github.com/user-attachments/assets/4d96c197-3ed7-4ee3-a54d-65d13606eb33)
+<br/>
+
 
 2. 검색
 - ‘검색창’, ‘주요 콘텐츠 카테고리’ 제공
   - 주요 콘텐츠 카테고리 터치 시, 해당 콘텐츠 리스트 제공
-  - 검색창 터치 시, ‘최근 검색기록’과 ‘검색기록 지우기’ 기능 제공
-    
+  - 검색창 터치 시, ‘최근 검색기록’과 ‘검색기록 지우기’ 기능 제공 <br/>
+  
+  ![Simulator Screen Recording - iPhone 15 Pro - 2024-08-29 at 14 42 52](https://github.com/user-attachments/assets/c2d64c00-5527-4365-8832-e9b8540a8851)
+<br/>
+
+     
 3. 모집
 - 현재 관람인원 모집 중인 영화관 ‘응원 상영’ 콘텐츠 정보 리스트 제공
 - 사용자가 직접 영화관 대관을 원할 경우, ‘모집’ 버튼 터치하여 파티원 모집
-  - ‘모집하기’ 화면 : 사진, 카테고리, 제목, 모집인원, 장소, 일시, 해시태그 기능
+  - ‘모집하기’ 화면 : 사진, 카테고리, 제목, 모집인원, 장소, 일시, 해시태그 기능 <br/>
 
+  ![Simulator Screen Recording - iPhone 15 Pro - 2024-08-29 at 14 43 59](https://github.com/user-attachments/assets/a6cdf6bb-e05a-412d-b1cc-e0d205f9dfea)
+<br/>
+ 
 4. 마이페이지
 - 사용자 프로필 및 수정 기능
 - ‘신청한 파티’ 내역 및  ‘커뮤니티(작성한 글, 댓글단 글)’ 기능 제공
-- ‘내가 신청한 콘텐츠’를 ‘캘린더’를 통해 확인
+- ‘내가 신청한 콘텐츠’를 ‘캘린더’를 통해 확인 <br/>
+
+  ![Simulator Screen Recording - iPhone 15 Pro - 2024-08-29 at 14 45 46](https://github.com/user-attachments/assets/34e60f29-6fbc-4a6b-8c21-9aadc488d8e9)
 
 <br/>
 
@@ -64,7 +79,7 @@
 ## ✅ 시나리오 📍
 <img width="1000" alt="스크린샷_2024-08-28_16 20 10" src="https://github.com/user-attachments/assets/5ecfabca-2135-448e-b85e-7526a1b43722">
 
-<br/>
+<br/><br/>
 
 ## ✅ 피드백 / 개선사항
 ### 1. 조별 피드백
@@ -103,16 +118,13 @@
 - 모집 <br/>
   - 플로팅 버튼('+모집' 버튼)의 위치 수정 (기존: 하단 -> 수정: 상단 내비게이션바 우측) <br/><br/>
   
-
-
 <br/>
-
 
 ## ✅ 작동환경 💻
 - Xcode: 14.0
 - iOS: 15.0
 
-<br/>
+<br/><br/>
 
 ## ✅ 개발자 🛠️
 - 김승철
@@ -120,7 +132,7 @@
 - 김정원
 - 김효정
 
-<br/>
+<br/><br/>
 
 ## ✅ 라이선스 ⚓️
 Licensed under the [MIT](LICENSE) license.
