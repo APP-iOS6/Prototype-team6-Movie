@@ -4,7 +4,6 @@ import UIKit
 class RecruitmentViewController: BaseViewController {
     
     let tableView = UITableView(frame: .zero, style: .plain)
-    let writeButton = UIButton(type: .system)
     
     //뷰 로드
     override func viewDidLoad() {
@@ -27,20 +26,9 @@ class RecruitmentViewController: BaseViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         
-        //글쓰기 버튼
-        writeButton.setTitle("+ 모집", for: .normal)
-        writeButton.setTitleColor(.white, for: .normal)
-        writeButton.titleLabel?.font = UIFont.bold20
-        
-        writeButton.backgroundColor = .darkGray
-        writeButton.layer.cornerRadius = 20
-        writeButton.layer.shadowColor = UIColor.black.cgColor
-        writeButton.layer.shadowOpacity = 0.5
-        writeButton.layer.shadowOffset = CGSize(width: 0, height: 5)
-        writeButton.addTarget(self, action: #selector(writeButtonAction), for: .touchUpInside)
-        
-        writeButton.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(writeButton)
+        let writeButton = UIBarButtonItem(title: "+ 모집하기", style: .plain, target: self, action: #selector(writeButtonAction))
+        writeButton.tintColor = .white
+        navigationItem.rightBarButtonItem = writeButton
         
         //뷰-글쓰기버튼
         NSLayoutConstraint.activate([
@@ -48,11 +36,6 @@ class RecruitmentViewController: BaseViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            
-            writeButton.widthAnchor.constraint(equalToConstant: 90),
-            writeButton.heightAnchor.constraint(equalToConstant: 50),
-            writeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            writeButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30)
         ])
     }
     

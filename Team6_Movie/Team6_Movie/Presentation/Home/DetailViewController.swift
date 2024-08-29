@@ -89,7 +89,7 @@ class DetailViewController: BaseViewController {
     
     private lazy var graphImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "graph")
+        imageView.image = UIImage(named: "group3")
         imageView.layer.masksToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.heightAnchor.constraint(equalToConstant: 120).isActive = true
