@@ -12,7 +12,7 @@ class MyPageCalendarViewController: BaseViewController {
     private lazy var dateLabelOne: UILabel = {
         let label = UILabel()
         label.text = "15일"
-        label.font = UIFont.systemFont(ofSize: 28, weight: .bold)
+        label.font = .bold24
         label.textColor = .white
         return label
     }()
@@ -20,7 +20,7 @@ class MyPageCalendarViewController: BaseViewController {
     private lazy var countLabelOne: UILabel = {
         let label = UILabel()
         label.text = "2개"
-        label.font = UIFont.systemFont(ofSize: 15)
+        label.font = UIFont(name: "Pretendard-Regular", size: 15)
         label.textColor = .white
         return label
     }()
@@ -28,7 +28,7 @@ class MyPageCalendarViewController: BaseViewController {
     private lazy var dateLabelTwo: UILabel = {
         let label = UILabel()
         label.text = "27일"
-        label.font = UIFont.systemFont(ofSize: 28, weight: .bold)
+        label.font = .bold24
         label.textColor = .white
         return label
     }()
@@ -36,7 +36,7 @@ class MyPageCalendarViewController: BaseViewController {
     private lazy var countLabelTwo: UILabel = {
         let label = UILabel()
         label.text = "1개"
-        label.font = UIFont.systemFont(ofSize: 15)
+        label.font = UIFont(name: "Pretendard-Regular", size: 15)
         label.textColor = .white
         return label
     }()
@@ -46,11 +46,11 @@ class MyPageCalendarViewController: BaseViewController {
         button.setImage(UIImage(named: "concert7"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         
-        button.addAction(UIAction(handler: { [weak self] _ in
+        button.addAction(UIAction(handler: { _ in
             let detailVC = DetailViewController()
             detailVC.setContent(Contents(category: .Concert, location: "서울", image: UIImage(named: "concert7")))
             detailVC.isApply = true
-            self?.navigationController?.pushViewController(detailVC, animated: true)
+            self.navigationController?.pushViewController(detailVC, animated: true)
         }), for: .touchUpInside)
         
         return button
@@ -61,11 +61,11 @@ class MyPageCalendarViewController: BaseViewController {
         button.setImage(UIImage(named: "animation12"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         
-        button.addAction(UIAction(handler: { [weak self] _ in
+        button.addAction(UIAction(handler: { _ in
             let detailVC = DetailViewController()
             detailVC.setContent(Contents(category: .Movie, location: "서울", image: UIImage(named: "animation12")))
             detailVC.isApply = true
-            self?.navigationController?.pushViewController(detailVC, animated: true)        }), for: .touchUpInside)
+            self.navigationController?.pushViewController(detailVC, animated: true)        }), for: .touchUpInside)
         
         return button
     }()
@@ -75,11 +75,11 @@ class MyPageCalendarViewController: BaseViewController {
         button.setImage(UIImage(named: "animation3"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         
-        button.addAction(UIAction(handler: { [weak self] _ in
+        button.addAction(UIAction(handler: { _ in
             let detailVC = DetailViewController()
             detailVC.setContent(Contents(category: .Movie, location: "서울", image: UIImage(named: "animation3")))
             detailVC.isApply = true
-            self?.navigationController?.pushViewController(detailVC, animated: true)        }), for: .touchUpInside)
+            self.navigationController?.pushViewController(detailVC, animated: true)        }), for: .touchUpInside)
         
         return button
     }()
@@ -141,22 +141,31 @@ class MyPageCalendarViewController: BaseViewController {
         NSLayoutConstraint.activate([
             dateLabelOne.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
             dateLabelOne.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 30),
+            
             countLabelOne.topAnchor.constraint(equalTo: dateLabelOne.bottomAnchor, constant: 10),
             countLabelOne.trailingAnchor.constraint(equalTo: dateLabelOne.trailingAnchor),
+            
             partyImageButtonTwo.topAnchor.constraint(equalTo: dateLabelOne.topAnchor),
             partyImageButtonTwo.leadingAnchor.constraint(equalTo: dateLabelOne.trailingAnchor, constant: 30),
+            
             partyInfoTwo.topAnchor.constraint(equalTo: partyImageButtonTwo.bottomAnchor),
             partyInfoTwo.centerXAnchor.constraint(equalTo: partyImageButtonTwo.centerXAnchor),
+            
             partyImageButtonThree.topAnchor.constraint(equalTo: dateLabelOne.topAnchor),
             partyImageButtonThree.leadingAnchor.constraint(equalTo: partyImageButtonTwo.trailingAnchor, constant: 2),
+            
             partyInfoThree.topAnchor.constraint(equalTo: partyImageButtonThree.bottomAnchor),
             partyInfoThree.centerXAnchor.constraint(equalTo: partyImageButtonThree.centerXAnchor),
+            
             dateLabelTwo.topAnchor.constraint(equalTo: partyImageButtonTwo.bottomAnchor, constant: 50),
             dateLabelTwo.leadingAnchor.constraint(equalTo: dateLabelOne.leadingAnchor),
+            
             countLabelTwo.topAnchor.constraint(equalTo: dateLabelTwo.bottomAnchor, constant: 10),
             countLabelTwo.leadingAnchor.constraint(equalTo: countLabelOne.leadingAnchor),
+            
             partyImageButtonOne.topAnchor.constraint(equalTo: dateLabelTwo.topAnchor),
             partyImageButtonOne.leadingAnchor.constraint(equalTo: dateLabelTwo.trailingAnchor, constant: 30),
+            
             partyInfoOne.topAnchor.constraint(equalTo: partyImageButtonOne.bottomAnchor),
             partyInfoOne.centerXAnchor.constraint(equalTo: partyImageButtonOne.centerXAnchor),
         ])

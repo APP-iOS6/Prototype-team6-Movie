@@ -55,13 +55,14 @@ class MyPageEditViewController: BaseViewController, UIImagePickerControllerDeleg
         label.text = "이름"
         label.textColor = .white
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont(name: "Pretendard-SemiBold", size: 14)
         return label
     }()
     
     private lazy var nameTextField: UITextField = {
         let textField = UITextField()
         textField.text = profileNameText
+        textField.font = UIFont(name: "Pretendard-Regular", size: 16)
         textField.clearButtonMode = .whileEditing
         textField.borderStyle = .roundedRect
         
@@ -73,20 +74,20 @@ class MyPageEditViewController: BaseViewController, UIImagePickerControllerDeleg
         label.text = "소개"
         label.textColor = .white
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont(name: "Pretendard-SemiBold", size: 14)
         return label
     }()
     
     private lazy var introductionTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "소개를 입력해주세요."
+        textField.font = UIFont(name: "Pretendard-Regular", size: 16)
         textField.text = introductionText
         textField.clearButtonMode = .whileEditing
         textField.borderStyle = .roundedRect
         
         return textField
     }()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

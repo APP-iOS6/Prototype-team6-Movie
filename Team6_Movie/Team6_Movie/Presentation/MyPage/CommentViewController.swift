@@ -34,6 +34,7 @@ class CommentViewController: BaseViewController, UITableViewDataSource {
     private lazy var searchTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "댓글을 입력해주세요."
+        textField.font = .regular16
         textField.borderStyle = .roundedRect
         textField.clearButtonMode = .whileEditing
 
@@ -87,9 +88,11 @@ class CommentViewController: BaseViewController, UITableViewDataSource {
             commentTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             commentTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             commentTableView.bottomAnchor.constraint(equalTo: searchTextField.topAnchor),
+            
             hStackView.leadingAnchor.constraint(equalTo: commentTableView.leadingAnchor, constant: 10),
             hStackView.trailingAnchor.constraint(equalTo: commentTableView.trailingAnchor, constant: -10),
             hStackView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: -10),
+            
             sendCommentButton.widthAnchor.constraint(equalToConstant: 40),
             sendCommentButton.heightAnchor.constraint(equalTo: searchTextField.heightAnchor)
         ])
