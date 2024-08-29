@@ -16,6 +16,18 @@ class MyPagePostViewController: BaseViewController {
         let segmentedControl = UISegmentedControl(items: ["작성한 글", "댓글단 글"])
         segmentedControl.selectedSegmentIndex = 0
         
+        // 선택되지 않은 상태의 폰트 설정
+            let normalFontAttributes: [NSAttributedString.Key: Any] = [
+                .font: UIFont.regular16
+            ]
+            segmentedControl.setTitleTextAttributes(normalFontAttributes, for: .normal)
+            
+            // 선택된 상태의 폰트 설정
+            let selectedFontAttributes: [NSAttributedString.Key: Any] = [
+                .font: UIFont.regular16
+            ]
+            segmentedControl.setTitleTextAttributes(selectedFontAttributes, for: .selected)
+        
         return segmentedControl
     }()
     
@@ -28,7 +40,8 @@ class MyPagePostViewController: BaseViewController {
     private lazy var firstLabel: UILabel = {
         let label = UILabel()
         label.text = "아직 작성한 글이 없습니다."
-        label.textColor = .systemGray4
+        label.font = UIFont(name: "Pretendard-Regular", size: 17)
+        label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -37,12 +50,12 @@ class MyPagePostViewController: BaseViewController {
         let button = UIButton(type: .system)
         button.setTitle("커뮤니티 글쓰기", for: .normal)
         button.setTitleColor(.mainColor(), for: .normal)
-        button.backgroundColor = .systemGray4
+        button.titleLabel?.font = .regular16
+        button.backgroundColor = .white
         button.layer.cornerRadius = 10
-        
-        button.addAction(UIAction(handler: { [weak self] _ in
+        button.addAction(UIAction(handler: { _ in
             let nextVC = WriteViewController()
-            self?.navigationController?.pushViewController(nextVC, animated: true)
+            self.navigationController?.pushViewController(nextVC, animated: true)
         }), for: .touchUpInside)
         
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -62,13 +75,12 @@ class MyPagePostViewController: BaseViewController {
         tableView.register(PartyCell.self, forCellReuseIdentifier: "PartyCell")
         tableView.backgroundColor = .mainColor()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.contentInset = UIEdgeInsets(top: 30, left: 0, bottom: 0, right: 0)
         return tableView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         setupInterface()
         setupLayout()
         
@@ -169,12 +181,35 @@ extension MyPagePostViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PartyCell", for: indexPath) as! PartyCell
         let party = filteredPartys[indexPath.row]
+        
+        // 이미지 설정
         cell.partyImageView.image = UIImage(named: party.imageFileName)
+        
         cell.mainLabel.text = party.mainText
-        cell.mainLabel.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        cell.mainLabel.font = .bold20
+        
         cell.subLabel.text = party.subText
-        cell.subLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
+        cell.subLabel.font = .regular12
+        
         cell.contentView.backgroundColor = .mainColor()
+        
+        NSLayoutConstraint.deactivate(cell.contentView.constraints) // 기존 제약 조건 비활성화
+        
+        NSLayoutConstraint.activate([
+            cell.partyImageView.centerYAnchor.constraint(equalTo: cell.contentView.centerYAnchor),
+            cell.partyImageView.leadingAnchor.constraint(equalTo: cell.contentView.leadingAnchor, constant: 15),
+            cell.partyImageView.widthAnchor.constraint(equalToConstant: 80),
+            cell.partyImageView.heightAnchor.constraint(equalToConstant: 80),
+            
+            cell.mainLabel.topAnchor.constraint(equalTo: cell.contentView.topAnchor, constant: 20),
+            cell.mainLabel.leadingAnchor.constraint(equalTo: cell.partyImageView.trailingAnchor, constant: 15),
+            cell.mainLabel.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: -15),
+            
+            cell.subLabel.topAnchor.constraint(equalTo: cell.mainLabel.bottomAnchor, constant: 5),
+            cell.subLabel.leadingAnchor.constraint(equalTo: cell.partyImageView.trailingAnchor, constant: 15),
+            cell.subLabel.trailingAnchor.constraint(equalTo: cell.contentView.trailingAnchor, constant: -15),
+            cell.subLabel.bottomAnchor.constraint(equalTo: cell.contentView.bottomAnchor, constant: -20)
+        ])
         return cell
     }
     

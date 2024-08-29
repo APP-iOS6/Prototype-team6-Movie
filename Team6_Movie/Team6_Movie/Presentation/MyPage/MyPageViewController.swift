@@ -49,6 +49,7 @@ class MyPageViewController: BaseViewController {
         let label = UILabel()
         label.text = "씨네"
         label.textColor = .white
+        label.font = UIFont(name: "Pretendard-SemiBold", size: 17)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -57,7 +58,7 @@ class MyPageViewController: BaseViewController {
     private lazy var introductionLabel: UILabel = {
         let label = UILabel()
         label.text = "영화가 조아(소개말)"
-        label.font = UIFont.preferredFont(forTextStyle: .footnote)
+        label.font = UIFont(name: "Pretendard-Regular", size: 13)
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -67,6 +68,7 @@ class MyPageViewController: BaseViewController {
         let button = UIButton(type: .system)
         button.setTitle("수정", for: .normal)
         button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Pretendard-Regular", size: 15)
         button.backgroundColor = .mainColor()
         button.layer.borderColor = UIColor.white.cgColor
         button.layer.borderWidth = 1
@@ -93,7 +95,7 @@ class MyPageViewController: BaseViewController {
     private lazy var partyNameLabel: UILabel = {
         let label = UILabel()
         label.text = "신청한 파티"
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        label.font = UIFont.bold20
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -104,11 +106,11 @@ class MyPageViewController: BaseViewController {
         button.setImage(UIImage(named: "image 28"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         
-        button.addAction(UIAction(handler: { [weak self] _ in
+        button.addAction(UIAction(handler: { _ in
             let detailVC = DetailViewController()
             detailVC.setContent(Contents(category: .Concert, location: "서울", image: UIImage(named: "concert7")))
             detailVC.isApply = true
-            self?.navigationController?.pushViewController(detailVC, animated: true)
+            self.navigationController?.pushViewController(detailVC, animated: true)
         }), for: .touchUpInside)
         
         return button
@@ -119,12 +121,12 @@ class MyPageViewController: BaseViewController {
         button.setImage(UIImage(named: "image-24"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         
-        button.addAction(UIAction(handler: { [weak self] _ in
+        button.addAction(UIAction(handler: { _ in
             let detailVC = DetailViewController()
             detailVC.setContent(Contents(category: .Movie, location: "서울", image: UIImage(named: "animation12")))
             detailVC.isApply = true
 
-            self?.navigationController?.pushViewController(detailVC, animated: true)        }), for: .touchUpInside)
+            self.navigationController?.pushViewController(detailVC, animated: true)        }), for: .touchUpInside)
         
         return button
     }()
@@ -134,12 +136,12 @@ class MyPageViewController: BaseViewController {
         button.setImage(UIImage(named: "animation3"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         
-        button.addAction(UIAction(handler: { [weak self] _ in
+        button.addAction(UIAction(handler: { _ in
             let detailVC = DetailViewController()
             detailVC.setContent(Contents(category: .Movie, location: "서울", image: UIImage(named: "animation3")))
             detailVC.isApply = true
 
-            self?.navigationController?.pushViewController(detailVC, animated: true)        }), for: .touchUpInside)
+            self.navigationController?.pushViewController(detailVC, animated: true)        }), for: .touchUpInside)
         
         return button
     }()
@@ -148,7 +150,7 @@ class MyPageViewController: BaseViewController {
         let label = UILabel()
         label.text = "08/27 17:00, 서울"
         label.textColor = .white
-        label.font = UIFont.boldSystemFont(ofSize: 10)
+        label.font = UIFont(name: "Pretendard-SemiBold", size: 10)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -157,7 +159,7 @@ class MyPageViewController: BaseViewController {
         let label = UILabel()
         label.text = "08/15 17:00, 서울"
         label.textColor = .white
-        label.font = UIFont.boldSystemFont(ofSize: 10)
+        label.font = UIFont(name: "Pretendard-SemiBold", size: 10)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -166,7 +168,7 @@ class MyPageViewController: BaseViewController {
         let label = UILabel()
         label.text = "08/15 12:00, 서울"
         label.textColor = .white
-        label.font = UIFont.boldSystemFont(ofSize: 10)
+        label.font = UIFont(name: "Pretendard-SemiBold", size: 10)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -175,7 +177,7 @@ class MyPageViewController: BaseViewController {
         let label = UILabel()
         label.text = "커뮤니티"
         label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        label.font = UIFont.bold20
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -183,7 +185,8 @@ class MyPageViewController: BaseViewController {
     private lazy var likeButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-        button.setTitle("  좋아요 한 게시글", for: .normal)
+        button.setTitle("  좋아요한 게시글", for: .normal)
+        button.titleLabel?.font = UIFont(name: "Pretendard-Regular", size: 15)
         button.setTitleColor(.white, for: .normal)
         button.tintColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -200,6 +203,7 @@ class MyPageViewController: BaseViewController {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "doc.text"), for: .normal)
         button.setTitle("  작성한 게시글 및 댓글", for: .normal)
+        button.titleLabel?.font = UIFont(name: "Pretendard-Regular", size: 15)
         button.setTitleColor(.white, for: .normal)
         button.tintColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -214,7 +218,7 @@ class MyPageViewController: BaseViewController {
         let label = UILabel()
         label.text = "캘린더"
         label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        label.font = UIFont.bold20
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

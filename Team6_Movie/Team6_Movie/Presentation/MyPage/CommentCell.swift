@@ -10,20 +10,21 @@ import UIKit
 class CommentCell: UITableViewCell {
     public lazy var commentNameLabel: UILabel = {
         let label = UILabel()
-        label.font = .preferredFont(forTextStyle: .headline)
+        label.font = UIFont(name: "Pretendard-Bold", size: 14)
         label.textColor = .white
         return label
     }()
     
     public lazy var commentDateLabel: UILabel = {
         let label = UILabel()
-        label.font = .preferredFont(forTextStyle: .footnote)
+        label.font = .regular12
         label.textColor = .systemGray3
         return label
     }()
     
     public lazy var commentContentLabel: UILabel = {
         let label = UILabel()
+        label.font = .regular16
         label.textColor = .white
         return label
     }()
