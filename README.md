@@ -20,7 +20,7 @@
 ### (사용자 니즈)
 <img src="https://github.com/user-attachments/assets/9bbe8383-4898-470e-8ff0-73c63e4ce18a" width="400" height="350">
 
-<br/>
+<br/><br/>
 
 ## ✅ 화면 구성 (4개의 탭바로 구성: 홈, 검색, 모집, 마이페이지)
 1. 홈
