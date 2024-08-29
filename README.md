@@ -1,5 +1,13 @@
 <img src="https://github.com/user-attachments/assets/6d0c3c5a-b49d-4b4d-bf53-507f2c01ce29" width="250" height="250"/>
 
+| 이름     | 역할  | GitHub |
+|----------|-------|--------|
+| 김승철 👑| 검색  | [![GitHub](https://img.shields.io/badge/GitHub-%2312100E.svg?style=flat-square&logo=github&logoColor=white)](https://github.com/Seungcheol-Kim) |
+| 김수민 | 모집  | [![GitHub](https://img.shields.io/badge/GitHub-%2312100E.svg?style=flat-square&logo=github&logoColor=white)](https://github.com/sumchive) |
+| 김정원 | 홈   | [![GitHub](https://img.shields.io/badge/GitHub-%2312100E.svg?style=flat-square&logo=github&logoColor=white)](https://github.com/gadisom) |
+| 김효정 | 마이페이지 | [![GitHub](https://img.shields.io/badge/GitHub-%2312100E.svg?style=flat-square&logo=github&logoColor=white)](https://github.com/brave-r) |
+
+
 # 모두의 씨네 🍿
 **영화관에서 함께 웃고 떠들며 중요한 순간을 함께하고 싶은 사람들을 위한 앱**
 <p align="left">
