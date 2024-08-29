@@ -448,7 +448,3 @@ class MyPageViewController: BaseViewController {
         self.navigationController?.popViewController(animated: true)
     }
 }
-
-#Preview {
-    MyPageViewController()
-}

@@ -127,6 +127,3 @@ class CommentViewController: BaseViewController, UITableViewDataSource {
     }
 }
 
-#Preview {
-    CommentViewController()
-}

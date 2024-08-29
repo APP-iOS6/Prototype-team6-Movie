@@ -465,9 +465,3 @@ class RecentSearchCell: UITableViewCell {
         subtitleLabel.text = subtitle
     }
 }
-
-#Preview {
-    SearchViewController()
-}
-
-

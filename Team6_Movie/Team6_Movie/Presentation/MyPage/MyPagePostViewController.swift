@@ -221,6 +221,3 @@ extension MyPagePostViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-#Preview {
-    MyPagePostViewController()
-}

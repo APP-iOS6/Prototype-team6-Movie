@@ -351,7 +351,3 @@ class WriteViewController: BaseViewController, UINavigationControllerDelegate, U
         dateFormatter.timeStyle = .short
     }
 }
-
-#Preview {
-    WriteViewController()
-}

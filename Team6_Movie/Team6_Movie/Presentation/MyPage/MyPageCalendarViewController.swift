@@ -171,7 +171,3 @@ class MyPageCalendarViewController: BaseViewController {
         ])
     }
 }
-
-#Preview {
-    MyPageCalendarViewController()
-}
