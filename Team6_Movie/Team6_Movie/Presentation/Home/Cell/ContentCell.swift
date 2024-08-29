@@ -33,7 +33,7 @@ class ContentCell: UICollectionViewCell {
             imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             imageView.heightAnchor.constraint(equalToConstant: 141),
             
-            dateLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 4),
+            dateLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor),
             dateLabel.centerXAnchor.constraint(equalTo: imageView.centerXAnchor)
         ])
     }

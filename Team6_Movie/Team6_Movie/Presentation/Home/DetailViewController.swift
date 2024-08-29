@@ -12,7 +12,20 @@ class DetailViewController: BaseViewController {
     private var content: Contents?
     private var isHeart = false
     var isApply = false
+    
     // UI 요소들
+    private lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
+    
+    private lazy var contentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
@@ -31,23 +44,43 @@ class DetailViewController: BaseViewController {
     
     private lazy var dateLabel: UILabel = {
         let dateLabel = UILabel()
-        dateLabel.font = .regular20
+        dateLabel.font = .regular16
         dateLabel.textColor = .lightGray
         return dateLabel
     }()
     
     private lazy var descriptionLabel: UILabel = {
         let descriptionLabel = UILabel()
-        descriptionLabel.font = .regular16
+        descriptionLabel.font = .bold24
         descriptionLabel.textColor = .white
         descriptionLabel.numberOfLines = 0
         descriptionLabel.text = "상세 설명"
         return descriptionLabel
     }()
     
+    private lazy var descriptionTextLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 4
+        
+        let attributedString = NSAttributedString(
+            string: "혈귀로 변해버린 여동생 네즈코를 다시 인간으로 되돌리기 위해 비밀조직 귀살대의 조직원이 된 탄지로는 젠이츠, 이노스케와 함께 무한 열차를 타고 임무 수행에 나선다.",
+            attributes: [
+                .paragraphStyle: paragraphStyle,
+                .font: UIFont.regular16,
+                .foregroundColor: UIColor.lightGray
+            ]
+        )
+        
+        label.attributedText = attributedString
+        return label
+    }()
+    
     private lazy var graphLabel: UILabel = {
         let graphLabel = UILabel()
-        graphLabel.font = .regular16
+        graphLabel.font = .bold24
         graphLabel.textColor = .white
         graphLabel.numberOfLines = 0
         graphLabel.text = "모집 현황"
@@ -90,9 +123,9 @@ class DetailViewController: BaseViewController {
     private lazy var applyButton: UIButton = UIButton.createButton(!isApply ? " 신청하기" : " 신청취소")
     
     private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [imageView, titleLabel, dateLabel, descriptionLabel, graphLabel, graphImageView])
+        let stackView = UIStackView(arrangedSubviews: [imageView, titleLabel, dateLabel, descriptionLabel, descriptionTextLabel, graphLabel, graphImageView])
         stackView.axis = .vertical
-        stackView.spacing = 16
+        stackView.spacing = 30
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -117,30 +150,40 @@ class DetailViewController: BaseViewController {
     
     // MARK: - UI 설정
     override func setupUI() {
-        view.addSubview(stackView)
-        view.addSubview(buttonStackView)
-        view.addSubview(applyButton)
-        
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        scrollView.addSubview(buttonStackView)
+        scrollView.addSubview(applyButton)
+        contentView.addSubview(stackView)
+
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
-        ])
-        
-        NSLayoutConstraint.activate([
-            buttonStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            buttonStackView.widthAnchor.constraint(equalToConstant: 80),
-            buttonStackView.bottomAnchor.constraint(equalTo: applyButton.topAnchor, constant: -16)
-        ])
-        
-        NSLayoutConstraint.activate([
-            applyButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            applyButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            applyButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+
+            buttonStackView.topAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 16),
+            buttonStackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
+            buttonStackView.widthAnchor.constraint(equalToConstant: 100),
+            buttonStackView.heightAnchor.constraint(equalToConstant: 50),
+
+            applyButton.topAnchor.constraint(equalTo: buttonStackView.bottomAnchor, constant: 16),
+            applyButton.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
+            applyButton.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -16),
+            applyButton.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -16),
             applyButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
-    
     private func setupNavigationBar() {
         let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareContent))
         navigationItem.rightBarButtonItem = shareButton
@@ -160,15 +203,14 @@ class DetailViewController: BaseViewController {
     @objc private func shareContent() {
         guard let content = content else { return }
         
-        // 공유할 항목들
         let items: [Any] = [
-            content.image ?? UIImage(), // 이미지가 있으면 이미지 공유
-            "\(content.category.rawValue) - \(content.location)", // 카테고리와 위치
-            content.date.toFormattedString() // 날짜
+            content.image ?? UIImage(),
+            "\(content.category.rawValue) - \(content.location)",
+            content.date.toFormattedString()
         ]
         
         let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: nil)
-        activityViewController.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem // iPad에서의 팝오버 설정
+        activityViewController.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
         present(activityViewController, animated: true, completion: nil)
     }
     
@@ -179,18 +221,11 @@ class DetailViewController: BaseViewController {
     }
     
     @objc private func commentButtonTapped() {
-        // 댓글 뷰로 이동
         let nextvc = CommentViewController()
         navigationController?.pushViewController(nextvc, animated: true)
     }
     
     @objc private func applyButtonTapped() {
-        let alert = UIAlertController(title: "신청하시겠습니까?", message: nil, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "확인", style: .default, handler: { [weak self] _ in
-            self?.navigationController?.popViewController(animated: true)
-        }))
-        present(alert, animated: true, completion: nil)
+            navigationController?.popViewController(animated: true)
     }
 }
-

@@ -23,8 +23,9 @@ class HomeViewController: BaseViewController {
         let kboView = ContentsView(contents: kboContents)
         let movieView = ContentsView(contents: movieContents)
         let concertView = ContentsView(contents: concertContents)
+        let kbo2View = ContentsView(contents: kboContents)
         
-        for contentsView in [kboView, movieView, concertView] {
+        for contentsView in [kboView, movieView, concertView, kbo2View] {
             contentsView.onItemSelected = {[weak self] content in
                 self?.showDetailViewController(for: content)
             }
@@ -32,7 +33,7 @@ class HomeViewController: BaseViewController {
                 self?.showCategoryViewController(for: category)
             }
         }
-        stackView.addArrangedSubviews(kboView, movieView, concertView)
+        stackView.addArrangedSubviews(kboView, movieView, concertView, kbo2View)
         
     }
     
@@ -64,7 +65,7 @@ class HomeViewController: BaseViewController {
     
     private func setupStackView() {
         stackView.axis = .vertical
-        stackView.spacing = 5
+        stackView.spacing = 20
         stackView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.addSubview(stackView)
         
